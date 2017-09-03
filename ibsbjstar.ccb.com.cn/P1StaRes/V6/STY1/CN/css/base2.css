@@ -1,0 +1,214 @@
+﻿
+/* ------------------------------------------------------------
+   version:	基本样式表1.0
+	author:	时代财富
+   content: 重置样式、便捷样式
+	create:	2015-01-19
+------------------------------------------------------------ */
+
+@charset "utf-8";
+
+/* ------------------------------------------	重置样式 START	------------------------------------------ */
+html,body,h1,h2,h3,h4,h5,h6,hr,p,iframe,dl,dt,dd,ul,ol,li,pre,form,button,input,textarea,th,td,a{ margin:0; padding:0;}
+body,button,input,select,textarea{ font:12px/1.5 '微软雅黑',Arial,Helvetica,Tahoma,sans-serif; color:#3f3f3f;}
+button{ cursor:pointer;}
+h1,h2,h3,h4,h5,h6{ font-size:100%;}
+h1{ font-size:18px;}
+h2{ font-size:16px;}
+h3{ font-size:14px;}
+ul,ol{ list-style:none;}
+img{ border:0; vertical-align:middle;}
+table{ border-collapse:collapse; border-spacing:0;}
+a{ color:#333; text-decoration:none;}
+a:hover{ color:#0066b3; text-decoration:underline;}
+input[type=button],input[type=submit],button{
+	cursor:pointer; 
+	overflow:visible;}			/*解决Input button padding 在IE里面不兼容问题*/
+/* ------------------------------------------	重置样式 END	    ------------------------------------------ */
+
+/* ------------------------------------------	便捷样式 START	------------------------------------------ */
+.fl{ float:left;}
+.fr{ float:right;}
+.clear{ clear:both; display:block; overflow:hidden; line-height:0; font-size:0; height:0;}
+.clearfix{ *zoom:1}
+.clearfix:before,
+.clearfix:after{ display:table; line-height:0; content:""}
+.clearfix:after{ clear:both;}
+.clear_both{clear: both;}
+.hide{ display:none !important;}
+.show{ display:block !important;}
+
+/*文本 START*/
+.tal{ text-align:left !important;}
+.tac{ text-align:center !important;}
+.tar{ text-align:right !important;}
+.vam{ vertical-align:middle;}
+.vat{ vertical-align:top;}
+
+.fs_12{ font-size:12px !important;}
+.fs_14{ font-size:14px !important;}
+.fs_16{ font-size:16px !important;}
+.fs_18{ font-size:18px !important;}
+
+.fc_default{ color:black !important;}
+.fc_red    { color:#d53739 !important;}
+.fc_blue   { color:#0066b3 !important;}
+.fc_grey   { color:grey !important;}
+.fc_green  { color:#45B256 !important;}
+.fc_cyan   { color:cyan !important;}
+.fc_orange { color:#FFBA00 !important;}
+.fc_white  { color:#fff !important;}
+
+.fw_bold{ font-weight:bold !important;}
+.fw_normal{ font-weight:normal !important;}
+
+.wordBreak {							/*文字省略*/
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	overflow:hidden;}
+/*文本 END*/
+
+/*外边距&内边距 START*/
+
+.mt_5{ margin-top:5px !important;}
+.mt_10{ margin-top:10px !important;}
+.mt_15{ margin-top:15px !important;}
+.mt_20{ margin-top:20px !important;}
+.mt_30{ margin-top:30px !important;}
+.mt_40{ margin-top:40px !important;}
+
+.mr_0{ margin-right:0px !important;}
+.mr_5{ margin-right:5px !important;}
+.mr_10{ margin-right:10px !important;}
+.mr_15{ margin-right:15px !important;}
+.mr_20{ margin-right:20px !important;}
+.mr_40{ margin-right:40px !important;}
+.mr_50{ margin-right:50px !important;}
+
+.mb_0{ margin-bottom:0px !important;}
+.mb_10{ margin-bottom:10px !important;}
+.mb_20{ margin-bottom:20px !important;}
+.mb_35{ margin-bottom:35px !important;}
+.mb_40{ margin-bottom:40px !important;}
+
+.ml_0{ margin-left:0px !important;}
+.ml_5{ margin-left:5px !important;}
+.ml_10{ margin-left:10px !important;}
+.ml_20{ margin-left:20px !important;}
+.ml_35{margin-left:35px !important;}
+.ml_47{margin-left:47px !important;}
+.ml_107{margin-left:107px !important;}
+.ml_129{margin-left:129px !important;}
+.ml_140{margin-left:140px !important;}
+.ml_145{margin-left:145px !important;}
+.ml_165{margin-left: 165px !important;}
+.ml_166{margin-left: 166px !important;}
+.ml_170{margin-left: 170px !important;}
+.ml_180{margin-left: 180px !important;}
+.ml_195{margin-left: 195px !important;}
+.ml_206{margin-left: 206px !important;}
+
+.pt_0{ padding-top:0px !important;}
+.pt_5{ padding-top:5px !important;}
+.pt_10{ padding-top:10px !important;}
+.pt_15{ padding-top:15px !important;}
+.pt_20{ padding-top:20px !important;}
+.pt_25{ padding-top:25px !important;}
+.pt_30{ padding-top:25px !important;}
+.pt_40{ padding-top:40px !important;}
+.pt_50{ padding-top:50px !important;}
+.pt_52{ padding-top:52px !important;}
+
+.pr_0{ padding-right:0px !important;}
+.pr_5{ padding-right:5px !important;}
+.pr_7{ padding-right:7px !important;}
+.pr_10{ padding-right:10px !important;}
+.pr_20{ padding-right:20px !important;}
+.pr_28{ padding-right:28px !important;}
+.pr_50{ padding-right:50px !important;}
+.pr_52{ padding-right:52px !important;}
+.pr_71{ padding-right:71px !important;}
+.pr_132{ padding-right:132px !important;}
+.pr_137{ padding-right:137px !important;}
+.pr_140{ padding-right:140px !important;}
+.pr_145{ padding-right:145px !important;}
+.pr_150{ padding-right:150px !important;}
+.pr_156{ padding-right:156px !important;}
+.pr_163{ padding-right:163px !important;}
+.pr_168{ padding-right:168px !important;}
+.pr_177{ padding-right:177px !important;}
+.pr_196{ padding-right:196px !important;}
+.pr_210{ padding-right:210px !important;}
+.pr_241{ padding-right:241px !important;}
+
+.pb_0{padding-bottom:0px !important;}
+.pb_5{padding-bottom:5px !important;}
+.pb_10{ padding-bottom:10px !important;}
+.pb_15{ padding-bottom:15px !important;}
+.pb_20{ padding-bottom:20px !important;}
+.pb_40{ padding-bottom:40px !important;}
+
+.pl_0{ padding-left:0px !important;}
+.pl_10{ padding-left:10px !important;}
+.pl_14{ padding-left:14px !important;}
+.pl_16{ padding-left:16px !important;}
+.pl_20{ padding-left:20px !important;}
+.pl_33{ padding-left:33px !important;}
+.pl_85{ padding-left:85px !important;}
+.pl_202{padding-left: 202px !important;}
+.p_x2{padding-left:2px !important; padding-right:2px !important;}
+/*外边距&内边距 END*/
+
+.width_30{width: 30px !important;}
+.width_131{width: 131px !important;}
+.width_150{width: 150px !important;}
+.width_172{width: 172px !important;}
+.width_179{width: 179px !important;}
+.width_190{width: 190px  !important;}
+.width_195{width: 195px  !important;}
+.width_200{width: 200px !important;}
+.width_207{width: 207px !important;}
+.width_216{width: 216px  !important;}
+.width_247{width: 247px !important;}
+.width_606{width: 606px  !important;}
+
+.tl_aln{ text-align:left !important;}
+.tc_aln{ text-align:center !important;}
+.tr_aln{ text-align:right !important;}
+
+.height_450{height: 450px  !important;}
+.ccb_mask{
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	z-index:9999;
+	background:url(../images/bg_black_5.png) repeat;}
+
+.bg_blue,
+.bg_orange{
+	color:#fff;}
+.bg_blue{
+	background:#0088cc;}
+.bg_orange{
+	background:#EF8C34;}
+/* ------------------------------------------	便捷样式 END	    ------------------------------------------ */
+
+
+.contain{ width:960px; margin:0 auto; padding-bottom: 60px;}
+
+._border_bottom{
+	border-bottom: 1px solid #CCCCCC;
+	border-collapse: collapse;
+}
+
+/*--重写a标签的颜色--*/
+.a_font{
+	color:#0066B3;
+}
+
+.a_hide{
+	display: none;
+}

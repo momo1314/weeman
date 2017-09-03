@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="中华邮 个人邮箱"/>
+<meta name="description" content="中华邮是一种新型的网络邮件，让电子邮件更直观、更有效、且更实用，甚至可以比较有趣。"/>
+<meta name="author" content="ck 11993" />
+<title>中华邮个人邮箱</title>
+<link rel="shortcut icon" href="http://mail.china.com/favicon.ico" />
+<style type="text/css">
+/*  Reset  */
+html,body,div,span,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,cite,code,del,em,img,q,small,strong,sub,sup,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,tr,th,td{ margin:0; padding:0; border:0; font-size:100%;}
+body{ background:#fff; color:#000; font:12px/1.5em arial,tahoma,simsun; text-align:center;}
+ol,ul{ list-style:none;}
+cite,em,strong,th,h1,h2,h3,h4,h5,h6{ font-style:normal; font-weight:normal;}
+table{ border-collapse:collapse; border-spacing:0;}
+input,textarea,select,button{ font-size:100%;}
+a, a:hover{ color:#000; text-decoration:none;}
+
+/*  Sprites  */
+.headerTel, .intro dl, .loginSub, .loginLink a {background:url(http://mail.china.com/img/img0609.png) no-repeat;}
+
+/*  Header  */
+.header {margin:auto; height:102px; overflow:hidden; text-align:left; width:950px; position:relative;}
+.headerLogo {float:left; padding-top:45px; width:160px;}
+.headerLogo a {background:url(http://mail.china.com/img/logo-mailchina.png); display:block; height:47px; line-height:300px; margin:0 auto; overflow:hidden; width:103px;}
+.headerTel {height:40px; line-height:300px; overflow:hidden; position:absolute; right:0; top:0; width:225px;}
+.headerNav {color:#666; font-weight:bold; font-size:14px; float:right; padding:68px 30px 0 0; width:340px; text-align:right;}
+.headerNav span {padding:0 8px;}
+.headerNav a {color:#666;}
+.headerNav a:hover {color:#000;}
+.headerTxt {color:#c00; float:right; font:bold 14px/25px simsun; padding-top:64px; overflow:hidden; height:30px; width:370px; text-align:center;}
+.headerTxt a {color:#c00;}
+.headerTxt a:hover {color:#f00;}
+
+/*  Main  */
+.main {background:url(http://mail.china.com/img/theme.jpg) center top no-repeat #5b8cff; height:336px; text-align:left;}
+.mainCon {margin:0 auto; position:relative; width:950px;}
+.loginBox {background:url(http://mail.china.com/img/loginBox24d0609.png) 0 0 no-repeat; height:345px; overflow:hidden; position:absolute; right:25px; top:42px; width:444px;
+_background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://mail.china.com/img/loginBox24d0609.png" ,sizingMethod="noscale");}
+.loginForm {height:260px; position:absolute; right:50px; top:128px; width:395px; z-index:9;}
+.loginForm a {color:#f00;}
+.loginForm a:hover {color:#c00;}
+.loginForm input {font-family:Verdana, Geneva, sans-serif;}
+.loginUsr  {height:50px;}
+.loginPwd {height:50px;}
+.loginSave {height:45px; padding-left:95px;}
+.loginBtn {height:70px; padding-left:95px;}
+.loginBtnTxt {display:block; font-family:simsun; float:left; padding-top:8px;}
+.loginSub {background-position:0 -50px; border:0; cursor:pointer; display:block; float:left; height:31px; margin-right:10px; overflow:hidden; text-indent:-9999px; width:95px;}
+.loginUsr label, .loginPwd label {display:block; float:left; font-size:14px; width:95px; text-align:right; padding-top:8px;}
+.loginInput {border:1px solid #ccc; display:block; color:#333; float:left; font-size:14px; height:30px; line-height:30px; margin-right:8px; padding:0 5px; width:170px;}
+.loginDomain {display:block; float:left; padding-top:8px;}
+.loginForget {display:block; float:left; padding-top:8px;}
+.loginCheck {margin-right:4px; font-size:12px; height:13px; vertical-align:middle; width:13px;}
+.loginLink {height:34px; padding-left:48px;}
+.loginLink a {display:block; float:left; height:34px; overflow:hidden; text-indent:-9999px; vertical-align:middle; width:100px;}
+.loginLink a.loginReg {background-position:0 -100px; margin-right:115px;}
+.loginLink a.loginPay {background-position:0 -150px;}
+.loginLink a.loginRegFree {width:121px; margin-left:94px; background-position:-104px -100px;}
+
+.loginTit {width:398px; position:absolute; right:48px; top:59px; z-index:8; text-align:center;}
+.loginTit li {width:50%; height:32px; overflow:hidden; float:left; cursor:pointer;}
+.loginTit li span {display:block; font:bold 14px/32px 'simsun';}
+.loginTit li span.ltVip {background:url('http://mail.china.com/img/loginTit0609.png') 0 -42px no-repeat; position:relative;}
+.loginTit li span.ltFree {background:url('http://mail.china.com/img/loginTit0609.png') no-repeat;}
+.loginTit li.current span.ltVip,
+.loginTit li.current span.ltFree {background:none;}
+.loginTit li .vipIcon {display:block; width:20px; height:16px; position:absolute; left:43px; top:8px; background:url('http://mail.china.com/img/loginTit0609.png') 0 -90px no-repeat;}
+.loginTit li.current .vipIcon {background:url('http://mail.china.com/img/loginTit0609.png') -30px -90px no-repeat;}
+
+/*  Intro  */
+.intro {background:url(http://mail.china.com/img/intro.png) repeat-x; height:142px; min-width:950px; text-align:left;}
+.intro a {color:#575757;}
+.intro a:hover {color:#000;}
+.introCon {margin:0 auto; overflow:hidden; padding-top:55px; width:950px;}
+.intro dl {color:#575757; float:left; line-height:140%; height:85px; padding-left:70px; width:166px;}
+.intro dt {font-size:14px; font-family:Verdana, "Microsoft Yahei",simhei; font-weight:bold 9; margin-bottom:6px; text-shadow: 2px 2px 0 #fff; filter:shadow(Color=#ffffff,Direction=225,Strength=5) 9; zoom:1;}
+.intro dd {font-family:simsun 9; width:155px; text-shadow: 2px 2px 0 #fff; filter:shadow(Color=#ffffff,Direction=225,Strength=3) 9; zoom:1;}
+.intro dl.in-1 {background-position:0 -200px; display:inline;}
+.intro dl.in-2 {background-position:0 -300px;}
+.intro dl.in-3 {background-position:0 -400px;}
+.intro dl.in-4 {background-position:0 -500px;}
+
+/*  Footer  */
+.footer {color:#3e3a39; padding:40px 0 20px; text-align:center;}
+.footer a {color:#3e3a39; margin:0 10px;}
+.footer a:hover {color:#000;}
+.footer p {padding-top:18px;}
+
+/*  Notice  */
+.notice {background:#fffbd3; border:3px solid #f0e898; height:370px; width:600px; margin:auto; position:absolute; top:50%; left:50%; margin:-185px 0 0 -300px; z-index:9999; -moz-box-shadow:0px 0px 5px #333333; -webkit-box-shadow:0px 0px 5px #333333; box-shadow:0px 0px 5px #333333; display:none;}
+.notice .close {clear:both; cursor:pointer; float:right; height:25px; width:25px; font:18px/24px simsun; text-align:center;}
+.notice h2 {color:#c00; font:22px/180% "Microsoft Yahei", simhei; text-align:center;}
+.notice .con {font:14px/140% simsun; margin-top:20px; padding:0 20px; text-align:left;}
+.notice .con p {padding-bottom:0.6em;}
+.notice .con p strong {font-weight:bold;}
+.notice .con p em {color:#c00;}
+.notice .con a {color:#c00; text-decoration:underline;}
+.notice .con a:hover {color:#f00;}
+
+/* Go to old version */
+a.goOld {margin-left:1em; color:#666;}
+a.goOld:hover {color:#c00;}
+
+</style>
+</head>
+
+<body>
+<!-- header -->
+<div class="header">
+  <h1 class="headerLogo"><a href="http://mail.china.com">中华邮个人邮箱</a></h1>
+  <div class="headerTel">电话：84105771</div>
+  <div class="headerNav"><a href="http://corpmail.china.com/" target="_blank">企业邮箱</a><span>|</span><a href="http://www.china.com/" target="_blank">中华首页</a><span>|</span><a href="help/help.html" target="_blank">帮助中心</a></div>
+  <div class="headerTxt"><a href="http://passport.china.com/stopfreemailnotice.html" target="_blank">重要通知：免费邮箱将停止使用，详情请点击查看！</a></div>
+  <!--<div class="headerTxt"><marquee behavior="scroll" direction="up" height="25" width="260" hspace="0" vspace="0" loop="-1" scrollamount="2" scrolldelay="100" onMouseOut="this.start()" onMouseOver="this.stop()">重要通知：中华网网络系统将于2015年5月15日（本周五）23:00至2015年5月16日（本周六）09:00进行升级，届时免费邮箱将无法登录请您知晓，给您带来不便非常抱歉！</marquee></div>-->
+</div>
+<!-- End header -->
+
+<!-- main -->
+<div class="main">
+  <div class="mainCon">
+    <div class="loginBox"></div>
+    <ul id="loginTit" class="loginTit">
+      <li id="_paymail_li" class="current"><span class="ltVip">VIP登录<i class="vipIcon"></i></span></li>
+    </ul>
+    
+    <!-- vipMail Start -->
+    <div class="loginForm" id="_paymail">
+      <form name="CoremailForm" action="http://payorder.china.com/LogonMailServlet" method="post">
+        <input type="hidden" name="chr" value="cn"/><!--登录语言 -->
+        <input type="hidden" name="isp_url" value="payorder.china.com"><!-- 运营商登录后要显示的域名-->
+        <!--<input type="hidden" name="isp_domain" value="ismail.cn">--><!--运营商的域名，@后面的部分 -->
+        <!--<input type="hidden" name="domain" id="domain" value="china.com" />-->
+        <div class="loginUsr"><label>邮箱名：</label><input type="text" name="username" class="loginInput" id="usr"/><span class="loginDomain">@china.com</span></div>
+        <div class="loginPwd"><label>密码：</label><input type="password" name="password" class="loginInput" onkeypress="if(event.keyCode==13){login();}" id="pass"/><!--<span class="loginForget"><a href="http://payorder.china.com/2012/findPass.jsp" target="_blank">忘记密码？</a></span> --></div>
+        <div class="loginSave"><input type="checkbox" name="checkbox" value="" id="saveCheck" class="loginCheck" checked="checked" />
+              <label class="loginSaveTxt" for="saveCheck">在此计算机上保存我的信息</label>
+			  <div style="color:red" id="errorMsg1"></div>
+		</div>
+        <div class="loginBtn"><input type="button" name="sub" value="登录" class="loginSub" onclick="login()"/><span class="loginBtnTxt"><a href="kefu.html" target="_blank">无法访问我的账户</a></span></div>
+        <div class="loginLink"><a href="http://payorder.china.com/2012/mailType.jsp" class="loginReg" target="_blank">注册中华邮</a><a href="http://payorder.china.com/2012/paycenter.jsp" class="loginPay" target="_blank">付费中心</a></div>
+      </form>
+    </div>
+    <!-- vipMail End -->
+  </div>
+</div>
+<!-- End main -->
+
+<!-- intro -->
+<div class="intro">
+  <div class="introCon">
+    <dl class="in-1">
+      <dt>联系人、日程同步</dt>
+      <dd>客户端和WEB邮箱联系人及日程同步更新、统一管理。</dd>
+    </dl>
+    <dl class="in-2">
+      <dt>OFFICE文件在线预览</dt>
+      <dd>无需安装OFFICE，随时随地查看附件内容。</dd>
+    </dl>
+    <dl class="in-3">
+      <dt>多重加密、安全保护</dt>
+      <dd>邮件收发加密认证、邮件传输全程加密保护。</dd>
+    </dl>
+    <dl class="in-4">
+      <dt>更强大的防御能力</dt>
+      <dd>基于多引擎的反病毒系统带来的强大防御能力。</dd>
+    </dl>
+  </div>
+</div>
+<!-- End intro -->
+
+<!-- footer -->
+<div class="footer">
+  <a href="kefu.html" target="_blank">联系客服</a>|<a href="http://china.com/zh_cn/general/bqsm.html" target="_blank">版权声明</a>|<a href="http://china.com/zh_cn/general/contact.html" target="_blank">联系方式</a>|<a href="http://china.com/zh_cn/general/advert.html" target="_blank">刊登广告</a>|<a href="http://china.com/zh_cn/general/help.html" target="_blank">使用说明</a>|<a href="http://www.inc.china.com/gb/global/home.php" target="_blank">关于中华网</a>|<a href="http://china.com/zh_cn/general/legal.html" target="_blank">豁免条款</a>
+  <p>版权所有<a href="http://www.china.com/" target="_blank">中华网</a></p>
+</div>
+<!-- End footer -->
+
+<!-- 通知 开始 -->
+<div class="notice" id="notice">
+  <div class="close" onclick="document.getElementById('notice').style.display='none'" title="关闭">&times;</div>
+  <h2>中华邮邮箱系统升级通知</h2>
+  <div class="con"><p><strong>尊敬的中华邮用户</strong>：<br />
+&emsp;&emsp;为了给您提供更好的邮箱服务和使用体验，我们于2013年1月25日起将对邮件系统进行升级操作。升级后的邮箱更稳定、功能更强大。升级过程中可能会出现重复收信、邮件丢失、通讯录信息不全等情况，请您联系我们的客服人员，我们将尽力为您解决。<br />
+&emsp;&emsp;请使用客户端收发邮件的用户注意邮件备份，保留好个人账户的用户名和密码，系统升级完成后，用户需要重新输入用户名和密码来进行邮件的收发。如果您忘记密码，请及时与客服联系进行处理。</p>
+<p>&emsp;&emsp;感谢您的支持与配合，我们将竭诚为您提供更好的服务。</p>
+<p>&emsp;&emsp;如果您要查看旧的邮件，可登录到 <a href="http://email.china.com" target="_blank">http://email.china.com</a> 进行查看。</p>
+<p>&emsp;&emsp;客服电话：400-636-1316、 010-84105771、 010-84105772<br />
+&emsp;&emsp;客服邮箱：<a href="mailto:&#107;&#102;&#64;&#99;&#104;&#105;&#110;&#97;&#46;&#99;&#111;&#109;">&#107;&#102;&#64;&#99;&#104;&#105;&#110;&#97;&#46;&#99;&#111;&#109;</a></p>
+<p style="text-align:right">中华邮客户服务中心<br />
+  2013年1月25日</p>
+</div>
+</div>
+<!-- 通知 结束 -->
+
+
+<!-- 促销#13212 开始 -->
+<!--div style="position:absolute; width:100px; left:50%; margin-left:455px; top:110px;"><a href="http://payorder.china.com/20130813/index.html" target="_blank"><img src="img/sale20130813.gif" width="100" height="300" alt="中华邮8.5折促销 2013年8月13日-23日" /></a></div-->
+<!-- 促销#13212 开始 -->
+
+<script src="http://mail.china.com/js/global_m0609.js"></script>
+<script>
+	//加载cookie中用户信息
+	var c = document.cookie + ";";
+	var re = /s?(.*?)=(.*?);/g;
+	while ((matches = re.exec(c)) != null) {
+	     if(matches[1]=='usr'){
+	        document.form_wm.usr.value = matches[2];
+	     }else if(matches[1]=='freeusr'){
+			document.getElementById("username").value = matches[2];
+		 }
+	};
+	//登录方法
+	function login(){
+		var form = document.CoremailForm;
+		if(form.username.value==""||form.password.value==""){
+			alert("您的用户名或密码不能为空，请重新输入");
+			return false;
+		}
+        form.submit();
+	}
+	
+	function _callback(state){
+		var form = document.form_wm;
+		if(document.getElementById('saveCheck').checked){//设置cookie,保存用户信息
+				document.cookie = "usr=" + form.usr.value + ";expires=Mon, 25 Jan 2020 00:00:00 GMT;path=/";
+		}
+		form.action = "http://"+form.isp_url.value+"/mail/login/opt/loginAction_loginOpt.do";
+		form.method = "post"
+		form.submit();
+	}
+	
+	function getUserInfo(username, password){
+		var pars = "username="+encodeURIComponent(username)+"&password="+encodeURIComponent(password);
+		var url = "http://passport.china.com/interface/GetUserInfoAction.do?processID=getUserInfo";
+		//pars = escape(pars);
+		url += "&" + pars;
+		var s = document.createElement("script");
+		document.getElementsByTagName("head")[0].appendChild(s);
+		s.src = url;
+		return false;
+	}
+	
+	function getCookieValue(name) 
+	{ 
+		var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)"); 
+		if(arr=document.cookie.match(reg)){
+			return unescape(arr[2]); 
+		}else {
+			return null; 
+		}
+	};
+	function getCookieVal(offset){
+		var endstr = document.cookie.indexOf(";", offset);
+		if(endstr == -1){
+			endstr = document.cookie.length;
+		}
+		return unescape(document.cookie.substring(offset, endstr));
+	};
+	function deleteCookie(name,path,domain){
+		if(getCookie(name))
+		{
+			document.cookie = name + "=" +
+				((path) ? "; path=" + path : "") +
+				((domain) ? "; domain=" + domain : "") +
+				"; expires=Thu, 01-Jan-70 00:00:01 GMT";
+		}
+	};
+	function getCookie(name){
+		var arg = name + "=";
+		var alen = arg.length;
+		var clen = document.cookie.length;
+		var i = 0;
+		while(i < clen)
+		{
+			var j = i + alen;
+			if (document.cookie.substring(i, j) == arg)
+			{
+				return getCookieVal(j);
+			}
+			i = document.cookie.indexOf(" ", i) + 1;
+			if(i == 0) break;
+		}
+		return "";
+	};
+	 //登录方法
+	function login2(){
+		var form = document.logonFrom;
+		var username = document.getElementById("username");
+		var password = document.getElementById("password");
+		var errorMsg = document.getElementById("errorMsg");
+		if(username.value==""||password.value==""){
+			errorMsg.innerHTML = "您的用户名或密码不能为空";
+			return false;
+		}else{
+			errorMsg.innerHTML = "";
+		}
+		if(document.getElementById('saveCheck').checked){//设置cookie,保存用户信息
+			document.cookie = "freeusr=" + username.value + ";expires=Mon, 25 Jan 2020 00:00:00 GMT;domain=.china.com; path=/";
+		}
+		document.cookie = "current_login=mail.china.com;expires=Mon, 25 Jan 2020 00:00:00 GMT;domain=.china.com; path=/";
+		return true;
+	 }
+	 
+	 
+	 function baikeBaseResult(){
+		//thisURL = document.URL; 
+		//document.getElementById("url").value=thisURL;
+			
+		
+		if(getCookie("current_login") != undefined && getCookie("current_login") != "" && getCookie("current_login") != "null"){
+			//document.getElementById("_freemail_li").className = 'current';
+			//document.getElementById("_paymail_li").className = '';
+			//document.getElementById("_freemail").style.display = 'block';
+		//	document.getElementById("_paymail").style.display = 'none';
+			deleteCookie("current_login","/","china.com");
+			
+			if(getCookie("errorMsg") != undefined && getCookie("errorMsg") != "" && getCookie("errorMsg") != "null"){
+				document.getElementById("errorMsg").innerHTML = getCookieValue("errorMsg");
+				deleteCookie("errorMsg","/","china.com");
+			}
+		}else{
+			if(getCookie("errorMsg") != undefined && getCookie("errorMsg") != "" && getCookie("errorMsg") != "null"){
+				document.getElementById("errorMsg1").innerHTML = getCookieValue("errorMsg");
+				deleteCookie("errorMsg","/","china.com");
+			}
+		}
+	 }
+	 
+	 baikeBaseResult();
+  if (document.getElementById('loginTit')) {
+    var slide1 = new Tab();
+    slide1.init({
+      handle:document.getElementById("loginTit").getElementsByTagName("li"),
+      content:getElementsByClassName('loginForm','div',document),
+      current:"current",
+      mode:"click"
+    });
+  };
+</script>
+
+<!-- Start Alexa Certify Javascript #13481-->
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"S6Upi1awA+00a/", domain:"china.com",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+<noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=S6Upi1awA+00a/" style="display:none" height="1" width="1" alt="" /></noscript>
+<!-- End Alexa Certify Javascript #13481-->
+</body>
+</html>
