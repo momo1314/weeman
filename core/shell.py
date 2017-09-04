@@ -89,8 +89,8 @@ def shell():
             elif prompt[0] == "run" or prompt[0] == "r":
                 if "localhost" not in url:
                     s = weeman(url,port)
-                    s.clone()
-                    s.serve()
+                    dirname = s.clone()
+                    s.serve(dirname)
                 else:
                     pass
 
