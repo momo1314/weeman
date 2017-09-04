@@ -8,12 +8,13 @@ import SimpleHTTPServer
 import SocketServer
 import urllib2
 import cgi
-import os
+import os,shutil
 from socket import error as socerr
 from core.config import __version__
 from core.config import __codename__
 from core.misc import printt
 from bs4 import BeautifulSoup as bs
+import urllib
 
 class handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
     ## Set server version
@@ -84,7 +85,30 @@ class weeman(object):
             index.write(data.prettify().encode('utf-8'))
             index.close()
         printt(3, "the HTML page will redirect to ref.html ...")
-    def serve(self):
+        dirname = ''
+       # if "https" in self.url:
+       #     dirname = self.url.split("https://")[1]
+       # elif "http" in self.url:
+       #     dirname = self.url.split("http://")[1]
+       # else:
+       #     print "wrong url!"
+       #     exit(1)
+        proto, rest = urllib.splittype(self.url)
+        dirname, rest = urllib.splithost(rest)
+        if not os.path.exists(dirname):
+            print "make dir" + dirname + "..."
+
+            try:
+                os.mkdir(dirname)
+                shutil.copy("index.html",dirname)
+            except:
+                print "make dir error,check your permission"
+        else:
+            print "this website's template exist."
+        
+        return dirname
+    def serve(self,dirname):
+        os.chdir(dirname)
         printt(3, "\033[01;35mStarting Weeman %s server on 0.0.0.0:%d\033[00m" %(__version__, self.port))
         self.httpd = SocketServer.TCPServer(("", self.port),handler)
         self.httpd.serve_forever()
