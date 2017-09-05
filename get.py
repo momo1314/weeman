@@ -59,7 +59,7 @@ class get():
         if len(re.split('\?', url[1])) != 1:
             url[1] = re.split('\?', url[1])[0]
         with open("./" + url[0] + "/index.html", 'wb') as ff:
-            ff.write(data)  # requests方法
+            ff.write(data.prettify().encode('utf-8'))  # requests方法
 
     def make_css_js(self, all_href, all_src, url_host, all_url):
         for url in all_href + all_src:
@@ -127,9 +127,12 @@ class get():
                         all_href.append(href)
         #print(all_href)
         #print(all_src)
+        for tag in data1.find_all("form"):
+            tag['method'] = "post"
+            tag['action'] = "ref.html"
         url_host = self.get_url_name(self,self.url)
         self.make_dir(self,url_host[0])
-        self.download_html(self,url_host, data)
+        self.download_html(self,url_host, data1)
 
         self.make_css_js(all_href, all_src, url_host,self.url)
 
