@@ -1,23 +1,11 @@
-#  use python 3
+# encoding=utf-8
 import requests
 import re
 from bs4 import BeautifulSoup as bs
 import string
 import os
-import urllib.parse
-import urllib.request
+import urllib
 from optparse import OptionParser
-
-'''
-urllib.error: ContentTooShortError;   URLError;   HTTPError
-urllib.parse:   urlparse;   _splitparams;   urlsplit;   urlunparse;   urlunsplit;   urljoin;   urldefrag;
-unquote_to_bytes;   unquote;   parse_qs;   parse_qsl;   unquote_plus;   quote;
-quote_plus;   quote_from_bytes;   urlencode;   to_bytes;   unwrap;   splittype;   splithost;   splituser;   splitpasswd;
-splitport 等；
-urllib.request: urlopen; install_opener; urlretrieve; urlcleanup; request_host; build_opener; _parse_proxy; parse_keqv_list; parse_http_list; _safe_gethostbyname; ftperrors; noheaders; getproxies_environment; proxy_bypass_environment; _proxy_bypass_macosx_sysconf; Request
-urllib.response: addbase; addclosehook; addinfo;addinfourl;
-urllib.robotparser: RobotFileParser
-'''
 
 
 class get():
@@ -25,8 +13,7 @@ class get():
         self.url = url
         
         self.header = {
-            "user_agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) \
-            Chrome/60.0.3112.101 Safari/537.36",
+            "user_agent": "Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko",
             "Accept-Language": "zh-CN,zh;q=0.8",
         }
         self.run()
@@ -38,8 +25,8 @@ class get():
 
     @staticmethod
     def get_url_name(self,url):
-        proto, rest = urllib.parse.splittype(url)
-        res, rest = urllib.parse.splithost(rest)
+        proto, rest = urllib.splittype(url)
+        res, rest = urllib.splithost(rest)
         res_all = [res, rest]
         print(res_all)
         return res_all
@@ -59,7 +46,7 @@ class get():
         if len(re.split('\?', url[1])) != 1:
             url[1] = re.split('\?', url[1])[0]
         with open("./" + url[0] + "/index.html", 'wb') as ff:
-            ff.write(data.prettify().encode('utf-8'))  # requests方法
+            ff.write(data.prettify().encode('utf-8'))
 
     def make_css_js(self, all_href, all_src, url_host, all_url):
         for url in all_href + all_src:
@@ -67,23 +54,41 @@ class get():
             if url == '':
                 pass
             else:
-                new_url = all_url.split('/')[0] + "//" + url_host[0] + '/' + url
-                s = self.get_html(new_url)
-                a = s.status_code
-                if a != 200:
-                    new_url = all_url.split('/')[0] + "//" + url_host[0] + '/' + url_host[1].split("/")[1] + '/' + url
-                    print(new_url)
-                else:
-                    pass
-                # print(new_url)
-                if url[0] == "/" and url[1] == "/":
-                    s = self.get_html("http:" + url)
+                try:
+                    host = all_url.split(url_host[1].split('/')[-1])[0]
+                except:
+                    if "host" in  dir():
+                        pass
+                    else:
+                        host = all_url
+                all_url_res = host.split("http://")[-1].split("https://")[-1]
+                all_url_res = all_url_res[0:(len(all_url_res) - 1)]
+                while 1:
+                    if str(url[0:3]) == "../":
+                        url = url[3:len(url)]
+                        try:
+                            host = host.split(all_url_res.split('/')[-1])[0]
+                            all_url_res = all_url_res.split(all_url_res.split('/')[-1])[0]
+                        except:
+                            pass
+                    else:
+                        break
+                new_url = host + url
+                if url[0] == '/':
+                    s = self.get_html(host.split(all_url_res)[0] + url_host[0] + url)
+                    if url[1] == '/':
+                        s = self.get_html("http:" + url)
                 else:
                     s = self.get_html(new_url)
                 data = s.content
                 f_name = url.split('/')[-1]
                 f_name = f_name.split('?')[0]
                 dirs = url.split(f_name)[0]
+                while 1:
+                    if dirs[0] == ' ' or dirs[0] == '/':
+                        dirs = dirs[1: len(dirs)]
+                    else:
+                        break
                 if os.path.exists('./' + url_host[0] + '/' + dirs):
                     pass
                 else:
@@ -110,7 +115,7 @@ class get():
             if src is not None:
                 # print(src)
                 try:
-                    urllib.request.urlopen(src)
+                    urllib.urlopen(src)
                 except:
                     if src in all_src:
                         pass
@@ -119,7 +124,7 @@ class get():
 
             if href is not None:
                 try:
-                    urllib.request.urlopen(href)
+                    urllib.urlopen(href)
                 except:
                     if href in all_href:
                         pass

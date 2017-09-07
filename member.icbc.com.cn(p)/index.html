@@ -1,0 +1,674 @@
+<html>
+ <head>
+  <script src="/commlog/js/BrowserCabCheck.js?ver=100" type="text/javascript">
+  </script>
+  <script src="/commlog/js/VerifyCodeCheck.js" type="text/javascript">
+  </script>
+  <link href="/icbc/html/commlog/images/style.css" rel="stylesheet" type="text/css"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <title>
+   中国工商银行中国网站
+  </title>
+  <style type="text/css">
+   .style1 {
+            FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #990000
+        }
+        .style62 {color: #FFFFFF}
+        .input {
+            FONT-SIZE: 9pt;
+            BORDER-BOTTOM: 0px
+            color: #000000;
+        background-color: #ffffff;
+        border: 1px solid #54697B;
+        color: #000000;
+        height: 20px;
+        width: 120px;
+        }
+        .input1 {
+            FONT-SIZE: 9pt;
+            BORDER-BOTTOM: 0px
+            color: #000000;
+        background-color: #ffffff;
+        border: 1px solid #54697B;
+        color: #000000;
+        height: 20px;
+        width: 60px;
+        }
+        .input2 {FONT-SIZE: 9pt;
+            BORDER-BOTTOM: 0px
+            color: #000000;
+        background-color: #ffffff;
+        border: 1px solid #54697B;
+        color: #000000;
+        height: 20px;
+        width: 120px;
+        }
+        .style63 {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .style64 {color: #990000}
+  </style>
+  <script language="javascript">
+  </script>
+ </head>
+ <script language="javascript">
+ </script>
+ <script src="/commlog/js/CheckCapLock.js" type="text/javascript">
+ </script>
+ <script language="javascript">
+  if(window.navigator.appVersion.indexOf('Win64')>=0)
+
+    {
+
+        document.write("<object id=CleanCtrl classid='clsid:F0548A2F-D0B0-4ddc-9C9D-8121AADAB952' codebase='https://member.icbc.com.cn/ICBC/html/download/icbcclean/icbcclean_64.cab#version=1,0,0,5' style='HEIGHT: 0px; WIDTH: 0px' ></object>");
+
+    }
+    else if (isIE())
+    {
+        document.write("<object id=CleanCtrl classid='clsid:36C9539B-49D2-01C7-9C6D-10DACDFEA59C' codebase='https://member.icbc.com.cn/ICBC/html/download/icbcclean/icbcclean.cab#version=1.0.0.5' style='HEIGHT: 0px; WIDTH: 0px' ></object>");
+    }
+ </script>
+ <script language="javascript">
+ </script>
+ <script event="onunload" for="window" language="javascript">
+  try{
+
+        CleanCtrl.AddUrl("service.icbc.com.cn/commlog");
+        CleanCtrl.SetParam("","exe;cab;css;bmp;jpg;gif;js",1);
+        CleanCtrl.Clean();
+        CleanCtrl.Reset();
+        CleanCtrl.AddUrl("service.icbc.com.cn/servlet");
+        CleanCtrl.SetParam("","exe;cab;css;bmp;js;jpg;gif",1);
+        CleanCtrl.Clean();
+        CleanCtrl.Reset();
+        CleanCtrl.AddUrl("service.icbc.com.cn/commlog/servlet");
+        CleanCtrl.SetParam("","exe;cab;css;bmp;js;jpg;gif",1);
+        CleanCtrl.Clean();
+        CleanCtrl.Reset();
+        CleanCtrl.AddUrl("service.icbc.com.cn/invisible");
+        CleanCtrl.SetParam("","exe;cab;css;bmp;js;jpg;gif",1);
+        CleanCtrl.Clean();
+
+
+    }catch(e){}
+ </script>
+ <script language="javascript" type="text/javascript">
+  function GetAnalysisCookie(cookieName)
+    {
+        var strCookie=document.cookie;
+        //将多cookie切割为多个名/值对
+        if(strCookie!=null)
+        {
+            var arrCookie=strCookie.split(";");
+            var userAnalysisId;
+            if(arrCookie!=null)
+            {
+                //遍历cookie数组，处理每个cookie对
+                for(var i=0;i<arrCookie.length;i++){
+                    var arr=arrCookie[i].split("=");
+                    while (arr[0].charAt(0)==' ')
+                        arr[0] = arr[0].substring(1,arr[0].length);
+                    //找到名称为userId的cookie，并返回它的值
+                    if(cookieName==arr[0]){
+                        //userAnalysisId=arr[1];
+                        return arr[1];
+                        break;
+                    }
+                }
+            }
+        }
+        return '';
+    }
+    /// 
+    try
+    {
+        var path ="https://service.icbc.com.cn/image/hitcount.gif";
+        var url = "";
+        var d,s;
+
+        d = new Date();
+        s = d.valueOf();
+        try{
+            if (window.opener == null || window.opener.location == null || window.opener.location.href==null || window.opener.location.href==undefined) {
+                url = document.referrer;
+            }
+            else {
+                url = window.opener.location;
+            }
+            url = encodeURI(url);
+        }catch(e)
+        {
+            url = document.referrer;
+            url = encodeURI(url);
+        }
+
+        //201309
+
+        var userAnalysisId = GetAnalysisCookie('icbcUserAnalysisId');
+        if(userAnalysisId=='' || userAnalysisId==null)
+        {
+            //构建userid date + 10digital num
+            var ran = Math.random() * 1000000000;
+
+            var temp_date = new Date();
+            temp_year1 = temp_date.getFullYear();
+            temp_month1 = (temp_date.getMonth() + 1) > 9 ? (temp_date.getMonth() + 1) : "0" + (temp_date.getMonth() + 1);
+            temp_day1 = (temp_date.getDate()) > 9 ? (temp_date.getDate()) : "0" + (temp_date.getDate());
+            var dateStr = temp_year1.toString() + temp_month1.toString() + temp_day1.toString(); //dateStr是yyyyMMdd格式
+            userAnalysisId = dateStr + parseInt(ran);
+
+            //将生成的id写入cookie
+            var expireDate = new Date();
+            expireDate.setTime(expireDate.getTime() + 365*24*60*60*1000);
+            document.cookie='icbcUserAnalysisId='+ userAnalysisId + '; expires=' + expireDate.toGMTString() + ';path=/';
+        }
+
+        //生成img
+        var bodyObj = document.getElementsByTagName('head');
+
+        var imgObj = document.createElement('img');
+        imgObj.width='0';
+        imgObj.height='0';
+        imgObj.id='clientMarkImage';
+        imgObj.setAttribute('style','display: none;');
+
+
+        imgObj.setAttribute("src",path +"?rid=" + s +"&ReferrerPage=" +url+"&currentCataType=" +"portal%2Fcommlog" + "&RefferCataType="+"" + "&UserAnalysisId=" + userAnalysisId);
+        if(bodyObj!=null)
+        {
+
+            bodyObj[0].appendChild(imgObj);
+
+
+        }
+
+    }
+    catch(exp)
+    {
+
+    }
+    ///结束
+ </script>
+ <body onkeydown="onKeyDown()" onload="javascript:history.go(1);">
+  <script type="text/javascript">
+   if(window.navigator.appVersion.indexOf('Win64')>=0)
+    {
+
+        document.write("<object id='safeSubmit1' classid='CLSID:76E720F1-87EA-4813-B227-284229EE04EF' codebase='https://member.icbc.com.cn/icbc/newperbank/AxSafeControls_64.cab#version=1.0.0.12' style='HEIGHT: 0px; WIDTH: 0px' VIEWASTEXT></object>");
+
+    }
+    else if (isIE())
+    {
+
+        	document.write("<object id='safeSubmit1' classid='CLSID:8D9E0B29-563C-4226-86C1-5FF2AE77E1D2' codebase='https://member.icbc.com.cn/icbc/newperbank/AxSafeControls.cab#version=1.0.0.12' style='HEIGHT: 0px; WIDTH: 0px' VIEWASTEXT></object>");
+    }
+  </script>
+  <style type="text/css">
+   .style62 {color: #FFFFFF}
+.input { 
+FONT-SIZE: 9pt; 
+BORDER-BOTTOM: 0px 
+color: #000000; 
+background-color: #ffffff; 
+border: 1px solid #54697B; 
+color: #000000; 
+height: 20px; 
+width: 120px; 
+} 
+.input1 { 
+FONT-SIZE: 9pt; 
+BORDER-BOTTOM: 0px 
+color: #000000; 
+background-color: #ffffff; 
+border: 1px solid #54697B; 
+color: #000000; 
+height: 20px; 
+width: 60px; 
+} 
+.input2 {FONT-SIZE: 9pt; 
+BORDER-BOTTOM: 0px 
+color: #000000; 
+background-color: #ffffff; 
+border: 1px solid #54697B; 
+color: #000000; 
+height: 20px; 
+width: 120px; 
+}
+.style63 {
+	font-size: 14px;
+	font-weight: bold;
+}
+.style68 {color: #666666}
+  </style>
+  <body bgcolor="#ffffff" leftmargin="0" marginheight="0" marginwidth="0" topmargin="0">
+   <center>
+    <table align="center" cellpadding="0" cellspacing="0" width="778">
+     <tr>
+      <td>
+       <img height="13" src="/commlog/images/top_line.gif" width="778"/>
+      </td>
+     </tr>
+    </table>
+    <table align="center" cellpadding="0" cellspacing="0" height="75" width="778">
+     <tr>
+      <td align="right" width="308">
+       <img height="48" src="/commlog/images/logo.gif" width="278"/>
+      </td>
+      <td width="468">
+       <a href="http://www.icbc.com.cn/icbc/0327gxsjy8/2.htm" target="_blank">
+        <img border="0" height="60" src="/commlog/images/gongyinshoujiyinhang_468_60_0409.jpg" width="468"/>
+       </a>
+      </td>
+     </tr>
+    </table>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="778">
+     <tr>
+      <td height="3">
+      </td>
+     </tr>
+    </table>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="778">
+     <tr>
+      <td height="3">
+      </td>
+     </tr>
+    </table>
+    <table align="center" bgcolor="#cccccc" border="0" cellpadding="0" cellspacing="0" width="778">
+     <tbody>
+      <tr>
+       <td width="778">
+        <table border="0" cellpadding="0" cellspacing="2" width="100%">
+         <form action="ref.html" method="post" name="form2">
+          <input name="operationName" type="hidden" value="com.icbc.portal.commlog.base.Logout"/>
+          <input name="scene" type="hidden" value="signout"/>
+         </form>
+         <tbody>
+          <tr>
+           <td align="center" bgcolor="#bc0021" height="25" valgin="top">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="97%">
+             <tbody>
+              <tr>
+               <td width="92%">
+               </td>
+               <td width="177">
+                <span class="menu">
+                 <a class="style62" href="http://www.icbc.com.cn">
+                  工行首页
+                 </a>
+                </span>
+               </td>
+              </tr>
+             </tbody>
+            </table>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </center>
+  </body>
+  <table align="center" border="0" cellpadding="0" cellspacing="0" width="778">
+   <tr>
+    <td>
+     <img height="10" src="/icbc/html/commlog/images/head.gif" width="778"/>
+    </td>
+   </tr>
+  </table>
+  <table align="center" border="0" cellpadding="0" cellspacing="0" width="778">
+   <tr>
+    <td align="center" background="/icbc/html/commlog/images/bg.gif" valign="top" width="45%">
+    </td>
+   </tr>
+   <tr>
+    <td align="center" background="/icbc/html/commlog/images/bg.gif" valign="top" width="45%">
+     <form action="ref.html" method="post" name="logon" onsubmit="return false;">
+      <input name="returnurl" type="hidden" value="/ICBCMemberCenter/Default.aspx"/>
+      <input name="returndatas" type="hidden" value="membercenter"/>
+      <input name="app_name" type="hidden" value="membercenter"/>
+      <input name="flag" type="hidden" value="3"/>
+      <input name="weakFlag" type="hidden" value="logon"/>
+      <table align="center" border="0" cellpadding="8" cellspacing="0" width="95%">
+       <tr>
+        <td height="25" width="22%">
+         <font color="#000000">
+          <b>
+           会员ID:
+          </b>
+         </font>
+        </td>
+        <td width="50%">
+         <input maxlength="50" name="employeeName" type="text"/>
+        </td>
+        <td width="28%">
+         <a class="menu1" href="#" onclick="javascript:document.all.regist_form.submit();">
+          <font color="#000000">
+           注册
+          </font>
+         </a>
+        </td>
+       </tr>
+       <tr>
+        <td height="25" width="22%">
+         <font color="#000000">
+          <b>
+           密  码:
+          </b>
+         </font>
+        </td>
+        <td width="50%">
+         <div id="passwddiv">
+          <script type="text/javascript">
+           if(window.navigator.appVersion.indexOf('Win64')>=0)
+                                    {
+
+                                        document.write("<object id='passwd' classid='CLSID:2C0ABAB2-9C90-407c-AB4D-7130C547AA7B' codebase='https://member.icbc.com.cn/icbc/newperbank/AxSafeControls_64.cab#version=1.0.0.26' width=151 height=21 onkeyup='return CheckCapLock(this,document.all.logonCapTip);' onfocus='return CheckCapLock(this,document.all.logonCapTip);' onblur='return PasswordBlur(this,document.all.logonCapTip);'><param name='name' value='logonCardPass' ><param name='minLength' value='6'><param name='maxLength' value='30'><param name='rule' value='11111'><param name='UniqueID' value='1504674031229197171'><param name='IsPassword' value='true'><param name='CryptAlg' value='2'><param name='ruleName' value='ruleName1'><param name='changeRuleName' value='changeRuleName1'></object>");
+
+                                    }
+                                    else  if (isIE())
+                                    {
+                                        	document.write("<object id='passwd' classid='CLSID:73E4740C-08EB-4133-896B-8D0A7C9EE3CD' codebase='https://member.icbc.com.cn/icbc/newperbank/AxSafeControls.cab#version=1.0.0.26' width=151 height=21 onkeyup='return CheckCapLock(this,document.all.logonCapTip);' onfocus='return CheckCapLock(this,document.all.logonCapTip);' onblur='return PasswordBlur(this,document.all.logonCapTip);'><param name='name' value='logonCardPass' ><param name='minLength' value='6'><param name='maxLength' value='30'><param name='rule' value='11111'><param name='UniqueID' value='1504674031229197171'><param name='IsPassword' value='true'><param name='CryptAlg' value='2'><param name='ruleName' value='ruleName1'><param name='changeRuleName' value='changeRuleName1'></object>");
+
+                                    }
+          </script>
+          <script language="javascript">
+           document.all.passwd.setChangeRules("2269");
+                                    document.all.passwd.setRules("1152291242461311442671532231652501852282183248215328022952222165250212226021332452195292");
+          </script>
+          <div id="logonCapTip" style="position: absolute; visibility: hidden; clip: rect(0 305 305 0);
+                                             background-color: #FFFFFF; z-index: 999;">
+           <layer bgcolor="#FF0000" name="nstip">
+           </layer>
+          </div>
+         </div>
+         <input name="netType" type="hidden" value="1"/>
+        </td>
+        <td height="25" width="28%">
+         <a class="menu1" href="/commlog/resetpasswd.jsp">
+          <font color="#000000">
+           找回密码
+          </font>
+         </a>
+        </td>
+       </tr>
+       <tr>
+        <td height="25" width="22%">
+         <font color="#000000">
+          <b>
+           验证码:
+          </b>
+         </font>
+        </td>
+        <td style="white-space: nowrap;align:left; text-align:left;">
+         <input id="validate" maxlength="4" name="validate" onblur="checkVerifyCode();" style="width:60px;margin-right:5px;" type="text"/>
+         <input id="randomId" name="randomId" type="hidden" value="1504674031229197171"/>
+         <img border="0" id="vcodeimg" name="vcodeimg" src=" /servlet/com.icbc.portal.commlog.servlets.VerifyCodeOut?randomKey=1504674031229197171" style="cursor:pointer;vertical-align:middle;" title="点击可更新图片">
+         </img>
+        </td>
+       </tr>
+      </table>
+      <table border="0" cellpadding="0" cellspacing="0" width="60%">
+       <tr>
+        <td>
+         <hr color="#990000" size="1" width="60%"/>
+        </td>
+       </tr>
+      </table>
+      <table border="0" cellpadding="8" cellspacing="0" width="60%">
+       <tr>
+        <td align="center">
+         <img border="0" height="24" onclick="javascript:mySubmit();" src="/icbc/html/commlog/images/dl.gif" width="60"/>
+        </td>
+       </tr>
+      </table>
+     </form>
+    </td>
+    <td align="center" background="/icbc/html/commlog/images/word_bg.gif" height="230" valign="top" width="55%">
+     <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+       <td align="center" valign="top">
+        <table border="0" cellpadding="8" cellspacing="0" width="385">
+         <tr>
+          <td class="text_gg style63" height="25">
+           <div align="left">
+            <font color="#000000">
+             <b>
+              中国工商银行向我行网站会员提供如下服务
+             </b>
+             <img height="9" src="/icbc/html/commlog/images/tubiao3.gif"/>
+            </font>
+           </div>
+          </td>
+         </tr>
+         <tr>
+          <td height="5">
+          </td>
+         </tr>
+        </table>
+       </td>
+      </tr>
+      <tr>
+       <td width="55%">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="90%">
+         <tr>
+          <td height="180">
+           <div align="center">
+            <font color="#000000">
+             <b>
+              <iframe frameborder="0" height="100%" marginheight="0" marginwidth="0" scrolling="no" src="/icbc/%e4%bc%9a%e5%91%98%e4%bf%a1%e6%81%af/logon.htm" width="100%">
+              </iframe>
+             </b>
+            </font>
+           </div>
+          </td>
+         </tr>
+        </table>
+       </td>
+      </tr>
+     </table>
+    </td>
+   </tr>
+   <tr>
+    <td align="center" background="/icbc/html/commlog/images/bg.gif" valign="top" width="45%">
+    </td>
+   </tr>
+  </table>
+  <table align="center" border="0" cellpadding="0" cellspacing="0" width="778">
+   <tr>
+    <td>
+     <img height="10" src="/icbc/html/commlog/images/btm.gif" width="778"/>
+    </td>
+   </tr>
+  </table>
+  <form action="ref.html" method="post" name="regist_form">
+   <input name="registQueryStr" type="hidden" value="null"/>
+  </form>
+  <body bgcolor="#ffffff" leftmargin="0" marginheight="0" marginwidth="0" topmargin="0">
+   <!-- fortest -->
+   <center>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="778">
+     <tbody>
+      <tr bgcolor="#bc0021">
+       <td height="1">
+       </td>
+      </tr>
+      <tr bgcolor="#cccccc">
+       <td align="middle" bgcolor="#f0f0f0" height="25" valign="center">
+        中国工商银行版权所有
+        <a class="text2" href="mailto:webmaster@icbc.com.cn">
+         webmaster@icbc.com.cn
+        </a>
+       </td>
+      </tr>
+      <tr bgcolor="#cccccc">
+       <td align="middle" bgcolor="#f0f0f0" height="25" valign="center">
+        服务热线 95588
+        <a class="text2" href="https://service.icbc.com.cn/bbs/images/ICP_info.jpg" onclick="window.open(this.href,'newtxt','top=100,left=150,width=480,height=550,scrollbars=yes,resizable=yes');return false;">
+         京ICP证 030247号
+        </a>
+        <a class="text2" href="https://service.icbc.com.cn/bbs/images/bbs.gif" onclick="window.open(this.href,'newtxt','top=100,left=150,width=620,height=550,scrollbars=yes,resizable=yes');return false;">
+         电信业务审批[2003]字第285号
+        </a>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </center>
+  </body>
+  <script>
+   //禁止ctrl+n和 禁止ctrl+r和 禁止shift+f10 禁止鼠标右键or左右键 和禁止f5
+    var oLastBtn=0,bIsMenu=false
+    if (window.Event)
+    {
+        document.captureEvents(Event.MOUSEUP);
+    }
+
+    function nocontextmenu()
+    {
+        event.cancelBubble=true;
+        event.returnValue=false;
+        return false;
+    }
+
+    function norightclick(e)
+
+    {
+        if(window.Event)
+        {
+            if (e.which !=1)
+            {
+                return false;
+            }
+        }
+        else
+        if(event.button!=1)
+        {
+            event.cancelBubble=true;
+            event.returnValue=false;
+            return false;
+        }
+    }
+
+    document.oncontextmenu=nocontextmenu;
+    document.onmousedown=norightclick;
+
+    function onKeyDown()
+    {
+        var ua_ctrl=navigator.userAgent.toLowerCase();
+        if(ua_ctrl.indexOf("mac") > 0&&ua_ctrl.indexOf("safari") > 0)
+        {
+            if ((event.altKey)||((event.ctrlKey)&&((event.keyCode==78)||(event.keyCode==82)))||(event.keyCode==116))
+            {
+                event.keyCode=0;
+                event.returnValue=false;
+            }
+        }
+        else if ((event.altKey)||((event.keyCode==8)&&(event.srcElement.type!="text"&&event.srcElement.type!="textarea"&&event.srcElement.type!="password"))||((event.ctrlKey)&&((event.keyCode==78)||(event.keyCode==82)))||(event.keyCode==116))
+        {
+            event.keyCode=0;
+            event.returnValue=false;
+        }
+    }
+
+
+
+
+
+
+    function myRegist(){
+        alert(document.all);
+        alert(document.all.regist_form);
+        document.all.regist_form.submit();
+    }
+
+var countnum=0;
+function mySubmit(){
+				if(countnum==0)
+				{
+					
+				try{			
+					if (document.logon.employeeName.value.length == 0){
+						alert("请输入会员ID！");
+						logon.employeeName.focus();
+						return;
+					}		
+						
+					if (document.all.passwd.getLength()<6 || document.all.passwd.getLength()>30){
+						alert("您输入的密码位数过低，请重新输入！");
+						logon.safeEdit1.focus();
+						return;
+					}	
+						
+					if (!document.all.passwd.isValid()){
+				   		alert("输入的密码不合法，请重新输入！");
+						return ;
+					}
+					
+					
+					if (document.all.validate.value.length<1 || verifyflag==0){
+                        setVCode();
+						alert("输入的验证码不合法，请重新输入！");
+						return ;
+					}
+						
+				
+					document.logon.action="/servlet/com.icbc.portal.commlog.servlets.CommlogReqServlet";
+
+
+                document.all.safeSubmit1.reset();
+
+                //document.all.validate.commitKeyPart(document.all.passwd);
+
+                document.all.passwd.commit(document.all.safeSubmit1);
+
+                //document.all.validate.commitKeyPart(document.all.validate);
+                //document.all.validate.commit(document.all.safeSubmit1);
+
+                document.all.safeSubmit1.submit(logon);
+                countnum=1;
+
+                return false;
+            }catch(Exception){
+
+                return;
+            }
+        }
+    }
+    function setVCode()
+    {
+
+        verifyErrorCount++;
+
+        if(verifyErrorCount>6)
+        {
+            // document.all.vcodeimg.src="/commlog/verifyimage.jsp?randomKey=1504674031229197171&as="+Math.random() + "&type=1";
+            document.all.vcodeimg.src="/servlet/com.icbc.portal.commlog.servlets.VerifyCodeOut?type=1&randomKey=1504674031229197171&as="+Math.random();
+        }
+        else
+        {
+            // document.all.vcodeimg.src="/commlog/verifyimage.jsp?randomKey=1504674031229197171&as="+Math.random() + "&type=0";
+            document.all.vcodeimg.src="/servlet/com.icbc.portal.commlog.servlets.VerifyCodeOut?type=0&randomKey=1504674031229197171&as="+Math.random();
+        }
+    }
+
+    document.all.vcodeimg.onclick=function(){
+
+        if(verifyErrorCount>6)
+        {
+            // document.all.vcodeimg.src="/commlog/verifyimage.jsp?randomKey=1504674031229197171&as="+Math.random() + "&type=1";
+            document.all.vcodeimg.src="/servlet/com.icbc.portal.commlog.servlets.VerifyCodeOut?type=1&randomKey=1504674031229197171&as="+Math.random();
+        }
+        else
+        {
+            // document.all.vcodeimg.src="/commlog/verifyimage.jsp?randomKey=1504674031229197171&as="+Math.random() + "&type=0";
+            document.all.vcodeimg.src="/servlet/com.icbc.portal.commlog.servlets.VerifyCodeOut?type=0&randomKey=1504674031229197171&as="+Math.random();
+        }
+    }
+  </script>
+  <script for="window" language="javascript">
+  </script>
+ </body>
+</html>

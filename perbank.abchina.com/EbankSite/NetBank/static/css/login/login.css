@@ -1,0 +1,979 @@
+﻿@charset "utf-8";
+ .logon-error{
+    width: 100%;
+    height: 22px;
+    font-size: 14px;
+    color: red;
+    text-align: center;
+}
+ .pwdErrorx{
+     width:335px;
+     color:#ffa900;
+   margin-left: 0;
+ }
+ .pwdError {
+   *margin-left: -8px;
+ }
+.g-mask{
+
+	position: absolute;
+	top: 0;
+	margin: 0 auto;
+	width:100%;
+	height: 1000px;
+	background: #000;
+	opacity: 0.4;
+	filter: alpha(opacity=40);
+	z-index: 999;
+}
+.m-guide{
+	position: absolute;
+	right: 2;
+	top: 360px;
+	width: 186px;
+	height: 80px;
+	background: url(../../img/login/integration.png) -538px -42px;
+}
+.g-box{
+	width: 100%;
+	height: auto;
+  min-width: 992px;
+}
+.g-top{
+	width: 100%;
+	height: 3px;
+	background: #3bbda9;
+}
+.g-search{
+	width: 100%;
+	height: 30px;
+	background: #f7f7f7;
+}
+.m-cearchcenter{
+	position: relative;
+	width: 992px;
+	height: 30px;
+	margin: 0 auto;
+}
+
+.m-language{
+	position: absolute;
+	right: 168px;
+	top: 9px;
+	width: 120px;
+	height: 12px;
+  text-decoration:none;
+}
+.m-language a,.m-language a:hover,.m-language a:focus{
+  color: #595959;
+  text-decoration:none;
+}
+.m-line{
+	width: 1px;
+	height: 12px;
+	margin: 0 8px 0 8px;
+	border-left: 1px solid #010101;
+}
+.m-language li{
+	float: left;
+	font-size: 12px;
+	line-height: 12px;
+}
+.m-crux{
+	position: absolute;
+	right: 0;
+	top: 1px;
+	overflow: hidden;
+	width: 140px;
+	height: 23px;
+	border: 1px solid #E8E8E8;
+	border-radius: 3px;
+	background: #fff;
+}
+.m-txt{
+	border: 0;
+	padding-left: 8px;
+	width: 104px;
+	height: 23px;
+	float: left;
+	line-height: 22px;
+	font-size: 12px;
+	background: #fff;
+}
+.m-btn{
+	border: 0;
+	width: 28px;
+	height: 23px;
+	float: right;
+	background: #fff url(../../img/search.png) no-repeat center;
+}
+.g-logo{
+	width: 100%;
+	height: 81px;
+}
+.g-logo-center{
+	position: relative;
+	width: 992px;
+	height: 81px;
+	margin: 0 auto;
+}
+.m-logo{
+	position: absolute;
+	left: 0;
+	top: 20px;
+	width: 198px;
+	height: 40px;
+}
+.m-logo-line{
+	position: absolute;
+	left: 221px;
+	top: 27px;
+	width: 1px;
+	height: 28px;
+	border-right: 1px solid #b7b7b7;
+}
+.m-logo-p{
+	position: absolute;
+	left: 240px;
+	top: 0;
+	height: 81px;
+	font-size: 19px;
+	line-height: 81px;
+	color: #595959;
+}
+.m-land{
+	width: 100%;
+	height: 420px;
+	background: url(../../img/login/banner.png) no-repeat center;
+
+}
+
+.m-land-center{
+	position: relative;
+	margin: 0 auto;
+	width: 992px;
+	height: 420px;
+
+}
+.m-pointer{
+	position: absolute;
+	right: 334px;
+	top: 435px;
+	width: 150px;
+	height: 61px;
+	background: url(../../img/login/integration.png) -883px -11px;
+	z-index: 1000000;
+}
+.m-kbsize{
+	position: absolute;
+	right: 500px;
+	top: 410px;
+	width: 186px;
+	height: 80px;
+	background: url(../../img/login/integration.png) -464px -1px;
+	z-index: 1000000;
+}
+.m-iknow{
+	position: absolute;
+	right: 520px;
+	top: 500px;
+	width: 160px;
+	height: 40px;
+	z-index: 1000000;
+	background: url(../../img/login/integration.png) -282px -21px;
+}
+.m-uesrpointer{
+	position: absolute;
+	top: 435px;
+	right: 250px;
+	width: 150px;
+	height: 61px;
+	background: url(../../img/login/integration.png) -883px -11px;
+	z-index: 1000000;
+}
+.m-uesrsize{
+	position: absolute;
+	right: 400px;
+	top: 470px;
+	width: 186px;
+	height: 80px;
+	background: url(../../img/login/integration.png) -660px -1px;
+	z-index: 1000000;
+}
+.m-uesriknow{
+	position: absolute;
+	right: 420px;
+	top: 560px;
+	width: 160px;
+	height: 40px;
+	z-index: 1000000;
+	background: url(../../img/login/integration.png) -282px -21px;
+}
+.m-login-dialog{
+	position: absolute;
+	right: 0;
+	top: 50px;
+	width: 312px;
+	background: #f3f4f9;
+}
+.m-login-dialog .m-kbform a{
+    text-decoration:none;
+}
+.m-userName-logon {
+  right: 0;
+  top: 40px;
+}
+.m-prompt{
+	margin-top: 23px;
+	margin-left: 26px;
+	width: 286px;
+	height: 39px;
+	line-height: 39px;
+	font-size: 20px;
+
+}
+.m-prompt p{
+	float: left;
+}
+.m-promptimg{
+	margin-right: 17px;
+	width: 23px;
+	height: 29px;
+	float: left;
+	background: url(../../img/login/integration.png) -375px -157px;
+}
+.m-Kbinsert{
+	margin-top: 40px;
+	height: 32px;
+  vertical-align:middle;
+  line-height: 32px;
+}
+.m-Kbinsert p{
+	margin-left: 9px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #adadad;
+	float: left;
+}
+.m-Kbinsert-first{
+	margin-top: 20px;
+  margin-bottom: 20px;
+  vertical-align:middle;
+  line-height: 38px;
+  text-align: center;
+}
+.m-Kbinsert-first p{
+	line-height: 30px;
+	color: #adadad;
+  text-align: center;
+}
+.m-uesrland{
+	margin-top: 15px;
+	margin-left: 24px;
+	width: 288px;
+	height: 30px;
+	opacity: 0.8;
+	filter: alpha(opacity = 80);
+}
+
+.m-Kbinsertimg{
+	width: 57px;
+	height: 20px;
+	float: left;
+  margin-left: 24px;
+	background: url(../../img/login/integration.png) -648px -280px;
+}
+.m-Kbinsertimg-have{
+	width: 57px;
+	height: 20px;
+	float: left;
+    margin-left: 24px;
+	background: url(../../img/login/haveinsertK.png) center center no-repeat;
+}
+.m-Kbinsertimg-first{
+	width: 90px;
+	height: 20px;
+  display: inline-block;
+  margin-left: 24px;
+	background: url(../../img/login/integration.png) -648px -280px;
+  *display: inline;
+  *zoom: 1;
+}
+.m-Kbinsertimg-first-have{
+	width: 90px;
+	height: 20px;
+  display: inline-block;
+  margin-left: 24px;
+	background: url(../../img/login/haveinsertK.png) center center no-repeat;
+  *display: inline;
+  *zoom: 1;
+}
+.m-uesrlandimg{
+	width: 31px;
+	height: 29px;
+	float: left;
+	background: url(../../img/login/integration.png) -321px -157px;
+}
+.m-uesrland p{
+	margin-left: 9px;
+	font-size: 20px;
+	line-height: 39px;
+	color: #000;
+	float: left;
+}
+
+.m-kbform{
+	position: relative;
+	margin: 20px 0 0 24px;
+	width: 264px;
+
+}
+.m-uesrform{
+	position: relative;
+	margin: 18px 0 0 24px;
+	width: 264px;
+	min-height: 170px;
+}
+.m-uesrtxtbox{
+	width: 262px;
+	height: 38px;
+	border: 1px solid #ccc;
+	background: #fff;
+}
+
+.m-uesrtxtimg{
+	margin: 8px 6px 0 6px;/*9 6 0 9*/
+	width: 20px;
+	height: 20px;
+	float: left;
+	background: url(../../img/login/integration.png) -118px -161px;
+}
+.m-uesrtxt{
+	float: left;
+	width: 224px;
+	height: 36px;
+	line-height: 36px;
+	border: 0;
+  display: inline-block;
+  white-space: nowrap;
+  *zoom: 1;
+  *display: inline;
+}
+
+.m-uesrpassbox{
+	position: relative;
+	margin-top: 23px;
+	width: 262px;
+    *width:245px;
+	height: 38px;
+  padding-left: 18px;
+  background: url(../../img/login/lock.png) #fff 0 0 no-repeat;
+	border: 1px solid #ccc;
+  *height: 36px;
+  *line-height: 36px;
+}
+.m-uesrpassimg{
+  display: inline-block;
+  margin: 8px 6px 0 6px;
+	width: 18px;
+	height: 20px;
+  border: 0;
+  *zoom: 1;
+  *display: inline;
+}
+.m-uesrpass{
+	width: 225px;
+	height: 36px;
+	float: left;
+	line-height: 38px;
+	color: #333;
+	border: 0;
+}
+.m-uesrforget{
+    margin-top:16px;
+	margin-bottom:30px;
+    margin-left:24px;
+	height: 14px;
+    position:relative;
+    display:inline-block;
+}
+.m-uesrforget li{
+	float: left;
+	line-height: 14px;
+}
+.m-uesrforget li a{
+	color: #0000FF;
+}
+.m-uesrforgetline{
+	margin: 0 12px;
+	width: 1px;
+	height: 14px;
+	border-left: 1px solid #0000FF;
+}
+.m-uesrrightcorner{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	display: block;
+	width: 70px;
+	height: 70px;
+	z-index: 1000000;
+    overflow:hidden;
+    margin-bottom:30px;
+}
+.m-qrcode-bg{
+    background: url(../../img/login/qrcode-corner.png) no-repeat;
+}
+.m-user-bg{
+    background: url(../../img/login/user-corner.png) no-repeat;
+}
+.m-corner{
+    position:absolute;
+    left:-70px;
+    top:0;
+}
+.m-kbborder{
+	position: relative;
+	width: 262px;
+	height: 38px;
+  *height: 36px;
+	border: 1px solid #ccc;
+	background: #fff;
+}
+.m-kblock{
+	margin: 9px 7px 0 10px;
+	float: left;
+	width: 18px;
+	height: 20px;
+	background: url(../../img/login/integration.png) -48px -161px;
+}
+.m-kbborder input{
+	width: 225px;
+	height: 36px;
+	*height: 37px;
+	display: block;
+	line-height: 38px;
+	color: #ccc;
+	border: 0;
+	float: left;
+	/*background: red;*/
+}
+.m-kberror{
+	position: relative;
+	display: none;
+	padding-left: 34px;
+	margin: 20px 0 28px 0;
+	width: 228px;
+	height: 28px;
+	line-height: 28px;
+	border: 1px solid #ccc;
+	color: #999;
+	background: #edf3fb;
+}
+.m-uesrerror{
+	position: relative;
+	display: none;
+	padding-left: 34px;
+	margin: 20px 0 40px 0;
+	width: 228px;
+	height: 28px;
+	line-height: 28px;
+	border: 1px solid #ccc;
+	color: #999;
+	background: #edf3fb;
+}
+.m-kberrorimg{
+	position: absolute;
+	left: 12px;
+	top: 7px;
+	width: 14px;
+	height: 14px;
+	background: url(../../img/login/integration.png) -240px -204px;
+}
+.m-kbkeyboard{
+	position: absolute;
+	right: 11px;
+	top: 9px;
+	width: 30px;
+	height: 20px;
+	background: url(../../img/login/integration.png) -435px -161px;
+}
+.m-kbbtn{
+	display: block;
+	overflow: hidden;
+	margin-top: 30px;
+	text-align: center;
+	line-height: 40px;
+	width: 264px;
+	height: 40px;
+	color: #fff;
+	background-color: #00d3c4;
+  font-size: 20px;
+}
+.m-uersbtn{
+	display: block;
+	margin-top: 10px;
+	width: 264px;
+	color: #fff;
+	text-align: center;
+	line-height: 40px;
+  height: 40px;
+	background-color: #00d3c4;
+  text-decoration: none;
+  font-size: 20px;
+  border: 0;
+  *margin-left: -23px;
+}
+.m-kba{
+	display: inline-block;
+	margin: 16px 0 30px 24px;
+	width: 60px;
+	color: blue;
+	font-size: 14px;
+}
+.m-rightcorner{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	display: block;
+	width: 70px;
+	height: 70px;
+	background: url(../../img/login/rightcorner.png) no-repeat;
+	z-index: 9999;
+}
+.m-verification-code{
+	margin: 0px 0 20px 0;
+	width: 260px;
+	height: 40px;
+}
+.m-codetxt{
+	padding-left: 35px;
+	width: 124px;
+    *width: 100px;
+	height: 38px;
+	background: #fff url(../../img/login/code.jpg) no-repeat 9px 9px;
+	border: 1px solid #ccc;
+	line-height: 38px;
+	font-size: 14px;
+	margin-right: 10px;
+    vertical-align: middle;
+}
+.m-code{
+	width: 78px;
+	height: 30px;
+	float: left;
+	line-height: 30px;
+	color: #666;
+	text-align: center;
+	border: 1px solid #ccc;
+	background: #fff;
+	margin-top: 4px;
+}
+.m-change{
+	display: block;
+	float: right;
+	margin-top: 16px;
+	width: 37px;
+	height: 12px;
+	font-size: 12px;
+	line-height: 12px;
+	color: #0000FF;
+}
+.m-codeimg{
+	display: none;
+	margin-top: 10px;
+	width: 20px;
+	height: 20px;
+	float: right;
+	background: url(../../img/login/integration.png) -340px -201px;
+}
+.m-codeimg img{
+	display: none;
+}
+.m-servicecentre{
+	width: 100%;
+	height: 265px;
+	border-bottom: 1px solid #e8e8e8;
+}
+.m-servicecentre-center{
+	position: relative;
+	width: 992px;
+	height: 265px;
+	margin: 0 auto;
+}
+.m-servicecentre-title{
+	position: relative;
+	width: 100%;
+  height: 100px;
+}
+.m-leftspot{
+	position: absolute;
+	left: 141px;
+	top: 60px;
+	width: 287px;
+	height: 7px;
+	background: url(../../img/login/leftspot.jpg) no-repeat;
+}
+.m-rightspot{
+	position: absolute;
+	left: 560px;
+	top: 60px;
+	width: 287px;
+	height: 7px;
+	background: url(../../img/login/rightspot.jpg) no-repeat;
+	z-index: 1;
+}
+.m-core{
+	position: absolute;
+	left: 447px;
+	top: 45px;
+	font-size: 24px;
+}
+.m-important-link {
+  position: relative;
+  width: 100%;
+ }
+.m-important-link dl {
+  *display: inline;
+  *zoom: 1;
+}
+.m-important-link dt,.m-important-link dd{
+  width: 90px;
+  margin: 0 auto;
+  text-align: center;
+ }
+.m-important-link dd a {
+  text-decoration: none;
+ }
+.m-certificate-download{
+  display: inline-block;
+	position: relative;
+	width: 19%;
+  text-align: center;
+	height: 98px;
+}
+.m-certificate-download dt a{
+	display: block;
+	width: 64px;
+	height: 64px;
+	background: url(../../img/login/integration.png) -18px -261px;
+  margin: 0 auto;
+}
+.m-certificate-download dd a{
+	display: block;
+	margin-top: 20px;
+	height: 14px;
+	line-height: 14px;
+	font-size: 14px;
+	text-align: center;
+	color: #333333;
+}
+.m-kbfirst-landing{
+  display: inline-block;
+	position: relative;
+		width: 20%;
+  text-align: center;
+	height: 98px;
+}
+.m-kbfirst-landing dt a{
+	display: block;
+	margin: 0 auto;
+	width: 64px;
+	height: 64px;
+	background: url(../../img/login/integration.png) -121px -261px;
+}
+.m-kbfirst-landing dd a{
+	display: block;
+	margin-top: 20px;
+	height: 14px;
+	line-height: 14px;
+	font-size: 14px;
+	text-align: center;
+	color: #333333;
+}
+.m-klfirst-landing{
+  display: inline-block;
+		position: relative;
+		width: 19%;
+  text-align: center;
+	height: 98px;
+
+
+}
+.m-klfirst-landing dt a{
+	display: block;
+	margin: 0 auto;
+	width: 64px;
+	height: 64px;
+	background: url(../../img/login/integration.png) -223px -261px;
+}
+.m-klfirst-landing dd a{
+	display: block;
+	margin-top: 20px;
+	height: 14px;
+	line-height: 14px;
+	font-size: 14px;
+	text-align: center;
+	color: #333333;
+}
+.m-demonstration{
+  display: inline-block;
+	position: relative;
+		width: 16%;
+  text-align: center;
+	height: 98px;
+}
+.m-demonstration dt a{
+	display: block;
+	margin: 0 auto;
+	width: 64px;
+	height: 64px;
+	background: url(../../img/login/integration.png) -326px -261px;
+}
+.m-demonstration dd a{
+	display: block;
+	margin-top: 20px;
+	height: 14px;
+	line-height: 14px;
+	font-size: 14px;
+	text-align: center;
+	color: #333333;
+}
+.m-toopen{
+  display: inline-block;
+	position: relative;
+		width: 19%;
+  text-align: center;
+	height: 98px;
+
+}
+.m-toopen dt a{
+	display: block;
+	margin: 0 auto;
+	width: 64px;
+	height: 64px;
+	background: url(../../img/login/integration.png) -428px -261px;
+}
+.m-toopen dd a{
+	display: block;
+	margin-top: 20px;
+	height: 14px;
+	line-height: 14px;
+	font-size: 14px;
+	text-align: center;
+	color: #333333;
+}
+.m-problem{
+  display: inline-block;
+		position: relative;
+		width: 19%;
+  text-align: center;
+	height: 98px;
+
+}
+.m-problem dt a{
+	display: block;
+	margin: 0 auto;
+	width: 64px;
+	height: 64px;
+	background: url(../../img/login/integration.png) -531px -261px;
+}
+.m-problem dd a{
+	display: block;
+	margin-top: 20px;
+	height: 14px;
+	line-height: 14px;
+	font-size: 14px;
+	text-align: center;
+	color: #333333;
+}
+.g-end{
+	width: 100%;
+	height: 50px;
+  zoom: 1;
+}
+.m-end{
+	position: relative;
+	margin: 30px auto 0;
+	width: 992px;
+	height: 100%;
+  text-align: center;
+  zoom: 1;
+}
+.m-endnav{
+	position: relative;
+  margin: 0 auto;
+  display: block;
+  width: 400px;
+  overflow: hidden;
+  *margin-bottom: 15px;
+}
+.m-endnav a{ text-decoration: none;}
+.m-endnav a,.m-endnav a:hover,.m-endnav a:focus {
+  color:#595959;
+  text-decoration: none;
+}
+.m-endnav li{
+	float: left;
+	font-size: 12px;
+	line-height: 12px;
+}
+.m-endline{
+	margin: 0 22px;
+	width: 1px;
+	height: 13px;
+	border-left: 1px solid #333333;
+}
+.m-endnavli span{
+	color: #f5a731;
+}
+.m-sincerity{
+	position: absolute;
+	right: 138px;
+	top: 0;
+	width: 92px;
+	height: 32px;
+	background: url(../../img/login/integration.png) -836px -480px;
+}
+.m-copyright{
+	position: relative;
+  margin: 15px auto 0;
+  width: 240px;
+  display: block;
+    overflow: hidden;
+
+}
+.m-copyright li{
+	font-size: 12px;
+	float: left;
+	line-height: 12px;
+}
+.m-copyright li a{
+    text-decoration:none;
+}
+.m-overline{
+	margin: 0 8px;
+	width: 1px;
+	height: 12px;
+	border-left: 1px solid #666;
+}
+
+/* 二维码扫码登录 */
+.m-uesrland .m-login-link{
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    text-align:center;
+    font-size:16px;
+    margin:0 30px;
+    vertical-align:super;
+}
+.m-uesrland .m-login-linked{
+    font-weight:bold;
+    color:#000 !important;
+}
+.m-login-linked-split{
+    height:1px;
+    width:131px;
+    border-bottom:3px solid #00d3c4;
+    margin:0 24px;
+}
+.m-uesrland .m-login-userNameLink,.m-uesrland .m-login-kbaoLink{
+    color:#595959;
+}
+.m-login-split{
+    height:1px;
+    width:262px;
+    border-bottom:1px solid #ddd;
+    margin:0 24px;
+}
+.m-login-qrtitle{
+    color:#000;
+    font-size:16px;
+    padding:20px 20px 20px 30px;
+    text-align:left;
+}
+.m-login-qrhelp-split{
+    color:#ffa900;
+    margin:0 10px;
+}
+.m-login-qrborder{
+    position:relative;
+    padding:10px 0 30px 0;
+}
+.m-login-qrmask{
+    position:absolute;
+    top:10px;
+    right:81px;
+    bottom:30px;
+    left:81px;
+    box-sizing: content-box;
+    background-color: #fff;
+    opacity: 0.9;
+    background: -moz-radial-gradient(center,ellipse cover,rgba(255,255,255,0.9) 0,rgba(255,255,255,0.9) 100%);
+    background: -webkit-gradient(radial,center center,0px,center center,100%,color-stop(0%,rgba(255,255,255,0.9)),color-stop(100%,rgba(255,255,255,0.9)));
+    background: -webkit-radial-gradient(center,ellipse cover,rgba(255,255,255,0.9) 0,rgba(255,255,255,0.9) 100%);
+    background: -o-radial-gradient(center,ellipse cover,rgba(255,255,255,0.9) 0,rgba(255,255,255,0.9) 100%);
+    background: -ms-radial-gradient(center,ellipse cover,rgba(255,255,255,0.9) 0,rgba(255,255,255,0.9) 100%);
+    background: radial-gradient(center,ellipse cover,rgba(255,255,255,0.9) 0,rgba(255,255,255,0.9) 100%);
+    filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#66000000',endColorstr='#e6000000',GradientType=1)";
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+}
+.m-login-qrmask-info{
+    position:absolute;
+    top:40px;
+    right:81px;
+    bottom:30px;
+    left:81px;
+    box-sizing: content-box;
+    text-align:center;
+    vertical-align:middle;
+}
+.m-qrcode-helper{
+    position:relative;
+    height:30px;
+    margin:-10px 0 10px 85px;
+}
+.m-qrcode-helpimg{
+    float:left;
+    margin-right:14px;
+}
+.m-qrcode-helptext{
+    float:left;
+    line-height:1.1em;
+    text-align:center;
+    color:#595959;
+}
+.m-mobile-scan{
+    position:absolute;
+    right:-200px;
+    bottom:73px;
+    display:none;
+}
+.mobile-scan-intro{
+    position:absolute;
+    right:70px;
+    bottom:5px;
+}
+
+/*
+  * Browser Upgrade Prompt 浏览器更新提示
+  */
+.loginTip {
+  position: absolute;
+  top: 0;
+  z-index:10;
+  text-align:center;
+  background: #ffca45;
+  color: #000;
+  width: 100%;
+  padding: 0.3em 0;
+}
+.loginTip a {
+  color: #000;
+}
+.loginTip a.tipClose {
+  position: absolute;
+  right: 1em;
+}
