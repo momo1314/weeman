@@ -109,40 +109,62 @@ class get():
         data1 = bs(data, "html.parser")
         # head = data1.find_all("head")
         # script = data1.find_all("script")
-        all_src = []
-        all_href = []
+        url_host = self.get_url_name(self,self.url)
         for link in data1.find_all("script") + data1.find_all("link") + data1.find_all("img") + data1.find_all(
-                "iframe"):
+                "iframe") + data1.find_all(
+                "a") + data1.find_all(
+                "input"):
             src = link.get('src')
             href = link.get('href')
             if src is not None:
-                # print(src)
+                url = src
+            elif href is not None:
+                url = href
+            else:
+                continue
+            if url == '' or url == "#":
+                print 1
+                pass
+            else:
                 try:
-                    urllib.urlopen(src)
+                    host = self.url.split(url_host[1].split('/')[-1])[0]
                 except:
-                    if src in all_src:
+                    if "host" in  dir():
                         pass
                     else:
-                        all_src.append(src)
+                        host = self.url
+                all_url_res = host.split("http://")[-1].split("https://")[-1]
+                all_url_res = all_url_res[0:(len(all_url_res) - 1)]
+                while 1:
+                    if str(url[0:3]) == "../":
+                        url = url[3:len(url)]
+                        try:
+                            host = host.split(all_url_res.split('/')[-1])[0]
+                            all_url_res = all_url_res.split(all_url_res.split('/')[-1])[0]
+                        except:
+                            pass
+                    else:
+                        break
+                new_url = host + url
+                print new_url
+                if url[0] == '/':
+                    res = host.split(all_url_res)[0] + url_host[0] + url
+                    if url[1] == '/':
+                        res = "http:" + url
+                else:
+                    res = new_url
 
-            if href is not None:
-                try:
-                    urllib.urlopen(href)
-                except:
-                    if href in all_href:
-                        pass
-                    else:
-                        all_href.append(href)
-        print(all_href)
-        print(all_src)
+                if src is not None:
+                    link['src'] = res
+                if href is not None:
+                    link['href'] = res
+
         for tag in data1.find_all("form"):
             tag['method'] = "post"
             tag['action'] = "ref.html"
-        url_host = self.get_url_name(self,self.url)
+
         self.make_dir(self,url_host[0])
         self.download_html(self,url_host, data1)
-
-        self.make_css_js(all_href, all_src, url_host,self.url)
 
 def main():
     parser = OptionParser()

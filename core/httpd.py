@@ -8,7 +8,7 @@ import SimpleHTTPServer
 import SocketServer
 import urllib2
 import cgi
-import os,shutil
+import os, shutil
 from socket import error as socerr
 from core.config import __version__
 from core.config import __codename__
@@ -16,48 +16,50 @@ from core.misc import printt
 from bs4 import BeautifulSoup as bs
 import urllib
 
+
 class handler(SimpleHTTPServer.SimpleHTTPRequestHandler):
     ## Set server version
-    server_version = "Weeman %s (%s)" %(__version__, __codename__)
+    server_version = "Weeman %s (%s)" % (__version__, __codename__)
 
     def do_POST(self):
         post_request = []
-        printt(3, "%s - sent POST request." %self.address_string())
-       	form = cgi.FieldStorage(self.rfile,
-            headers=self.headers,
-            environ={'REQUEST_METHOD':'POST',
-                     'CONTENT_TYPE':self.headers['Content-Type'],})
+        printt(3, "%s - sent POST request." % self.address_string())
+        form = cgi.FieldStorage(self.rfile,
+                                headers=self.headers,
+                                environ={'REQUEST_METHOD': 'POST',
+                                         'CONTENT_TYPE': self.headers['Content-Type'], })
         try:
             from core.shell import url
-            logger = open("%s.log" %url.replace("https://", "").replace("http://", "").split("/")[0], "w+")
-            logger.write("## Data for %s\n\n" %url)
+            logger = open("%s.log" % url.replace("https://", "").replace("http://", "").split("/")[0], "w+")
+            logger.write("## Data for %s\n\n" % url)
             for tag in form.list:
                 tmp = str(tag).split("(")[1]
-                key,value = tmp.replace(")", "").replace("\'", "").replace(",", "").split()
-                post_request.append("%s %s" %(key,value))
-                printt(2, "%s => %s" %(key,value))
-                logger.write("%s => %s\n" %(key,value))
+                key, value = tmp.replace(")", "").replace("\'", "").replace(",", "").split()
+                post_request.append("%s %s" % (key, value))
+                printt(2, "%s => %s" % (key, value))
+                logger.write("%s => %s\n" % (key, value))
             logger.close()
             from core.shell import action_url
-            create_post(url,action_url, post_request)
+            create_post(url, action_url, post_request)
             SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
         except socerr as e:
-            printt(3, "Something wrong: (%s) igonring ..." %str(e))
+            printt(3, "Something wrong: (%s) igonring ..." % str(e))
         except Exception as e:
-            printt(3, "Something wrong: (%s) igonring ..." %str(e))
+            printt(3, "Something wrong: (%s) igonring ..." % str(e))
 
     def log_message(self, format, *args):
-        printt(3, "Connected : %s" %(self.address_string()))
-        arg = format%args
+        printt(3, "Connected : %s" % (self.address_string()))
+        arg = format % args
         if arg.split()[1] == "/":
-            printt(3, "%s - sent GET request without parameters." %self.address_string())
+            printt(3, "%s - sent GET request without parameters." % self.address_string())
         else:
             if arg.split()[1].startswith("/") and "&" in arg.split()[1]:
-                printt(3, "%s - sent GET request with parameters." %self.address_string())
-                printt(2, "%s" %arg.split()[1])
+                printt(3, "%s - sent GET request with parameters." % self.address_string())
+                printt(2, "%s" % arg.split()[1])
+
 
 class weeman(object):
-    def __init__(self, url,port):
+    def __init__(self, url, port):
         from core.shell import url
         from core.shell import port
         self.port = port
@@ -65,18 +67,18 @@ class weeman(object):
         self.url = url
         self.form_url = None;
 
-    def request(self,url):
-            from core.shell import user_agent
-            opener = urllib2.build_opener()
-            opener.addheaders = [('User-Agent', user_agent)]
-            return opener.open(self.url).read()
+    def request(self, url):
+        from core.shell import user_agent
+        opener = urllib2.build_opener()
+        opener.addheaders = [('User-Agent', user_agent)]
+        return opener.open(self.url).read()
 
     def clone(self):
-        printt(3, "Trying to get %s  ..." %self.url)
+        printt(3, "Trying to get %s  ..." % self.url)
         printt(3, "Downloadng wepage ...")
         data = self.request(self.url)
-	# print(data)
-        data = bs(data, "html.parser")    
+        # print(data)
+        data = bs(data, "html.parser")
         printt(3, "Modifying the HTML file ...")
         for tag in data.find_all("form"):
             tag['method'] = "post"
@@ -86,13 +88,13 @@ class weeman(object):
             index.close()
         printt(3, "the HTML page will redirect to ref.html ...")
         dirname = ''
-       # if "https" in self.url:
-       #     dirname = self.url.split("https://")[1]
-       # elif "http" in self.url:
-       #     dirname = self.url.split("http://")[1]
-       # else:
-       #     print "wrong url!"
-       #     exit(1)
+        # if "https" in self.url:
+        #     dirname = self.url.split("https://")[1]
+        # elif "http" in self.url:
+        #     dirname = self.url.split("http://")[1]
+        # else:
+        #     print "wrong url!"
+        #     exit(1)
         proto, rest = urllib.splittype(self.url)
         dirname, rest = urllib.splithost(rest)
         if not os.path.exists(dirname):
@@ -100,19 +102,20 @@ class weeman(object):
 
             try:
                 os.mkdir(dirname)
-                shutil.copy("index.html",dirname)
+                shutil.copy("index.html", dirname)
             except:
                 print "make dir error,check your permission"
         else:
             print "this website's template exist."
-        
+
         return dirname
-    def serve(self,dirname):
+
+    def serve(self, dirname):
         os.chdir(dirname)
-        printt(3, "\033[01;35mStarting Weeman %s server on 0.0.0.0:%d\033[00m" %(__version__, self.port))
-        self.httpd = SocketServer.TCPServer(("", self.port),handler)
+        printt(3, "\033[01;35mStarting Weeman %s server on 0.0.0.0:%d\033[00m" % (__version__, self.port))
+        self.httpd = SocketServer.TCPServer(("", self.port), handler)
         self.httpd.serve_forever()
-    
+
     def cleanup(self):
         printt(3, "\n:: Running cleanup ...")
         ## In case weeman will not create ref.html,
@@ -122,21 +125,18 @@ class weeman(object):
         if os.path.exists("ref.html"):
             os.remove("ref.html")
 
-
     # @rewrite
     def link_serve(self):
         pass
 
 
-def create_post(url,action_url, post_request):
+def create_post(url, action_url, post_request):
     printt(3, "Creating ref.html ...")
-    red = open("ref.html","w")
-    red.write("<body><form id=\"ff\" action=\"%s\" method=\"post\" >\n" %action_url)
+    red = open("ref.html", "w")
+    red.write("<body><form id=\"ff\" action=\"%s\" method=\"post\" >\n" % action_url)
     for post in post_request:
-        key,value = post.split()
-        red.write("<input name=\"%s\" value=\"%s\" type=\"hidden\" >\n" %(key,value))
+        key, value = post.split()
+        red.write("<input name=\"%s\" value=\"%s\" type=\"hidden\" >\n" % (key, value))
     red.write("<input name=\"login\" type=\"hidden\">")
     red.write("<script langauge=\"javascript\">document.forms[\"ff\"].submit();</script>")
     red.close()
-
-
